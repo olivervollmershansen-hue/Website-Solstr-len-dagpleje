@@ -21,8 +21,8 @@ header{
     display: flex;
     gap: 28px;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 40px; /*change a "auto" pour que le menu soit au milieu*/ 
+    margin-right: 0;  /*change a "auto pour que le menu soit au milieu*/
 }
 
 .menu a{
