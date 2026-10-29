@@ -27,5 +27,73 @@
             <a href="kontakt.html">Kontakt</a>
         </nav>
     </header>
+
+
+<!-- Søgebaren for at se om der er plads -->  
+<!-- Søgebaren for at se om der er plads -->
+<!-- Søgebaren for at se om der er plads -->
+<section class="availability-checker">
+  <h2>Se tilgængelighed</h2>
+  <p>Vælg den dato du kunne tænke dig dit barn starter, og se om vi har plads</p>
+
+  <form id="availability-form">
+    <label for="availability-date">Vælg en dato:</label>
+
+    <input
+      type="date"
+      id="availability-date"
+      required
+    >
+
+    <button type="submit">Se tilgængelighed</button>
+  </form>
+
+  <p id="availability-result"
+     role="status"
+     aria-live="polite"></p>
+</section>
+
+<script>
+  const form = document.getElementById('availability-form');
+  const dateInput = document.getElementById('availability-date');
+  const result = document.getElementById('availability-result');
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const date = dateInput.value;
+
+    if (!date) {
+      result.textContent = 'Vælg venligst en dato.';
+      return;
+    }
+
+    result.textContent = 'Tjekker tilgængelighed...';
+
+    try {
+      const response = await fetch(
+        `/api/availability?date=${encodeURIComponent(date)}`
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Der skete en fejl.');
+      }
+
+      result.textContent = data.available
+        ? 'Der er plads til dit barn på denne dato.'
+        : 'Der er desværre ikke plads til dit barn til denne dato.';
+    } catch (error) {
+      result.textContent =
+        'Kunne ikke se tilgængelighed, prøv venligst igen senere.';
+    }
+  });
+</script>
+<!-- Slutning af kode til søgebaren for tilgængelighed -->
+<!-- Slutning af kode til søgebaren for tilgængelighed -->
+<!-- Slutning af kode til søgebaren for tilgængelighed -->
+
+
 </body>
 </html>
