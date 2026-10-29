@@ -1,0 +1,31 @@
+<!-- Knapper til tilføj og fjern -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+  <title>Administrer børn</title>
+</head>
+<body>
+<h1>Børn i dagplejen</h1>
+
+<h2>Tilføj et barn</h2>
+
+<form id="childForm">
+  <label for="name">Barnets navn:</label>
+  <input type="text" id="name" required>
+
+  <label for="startDate">Startdato:</label>
+  <input type="date" id="startDate" required>
+
+  <label for="endDate">Slutdato:</label>
+  <input type="date" id="endDate" required>
+
+  <button type="submit">Tilføj barn</button>
+</form>
+
+<h2>Indskrevne børn</h2>
+<ul id="childrenList"></ul>
+<script src="children.js"></script> <!-- Connect til javascript-->
+</body>
+</html>
