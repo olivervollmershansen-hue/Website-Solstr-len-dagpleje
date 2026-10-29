@@ -1,42 +1,83 @@
-<!-- Knapper til tilføj og fjern -->
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Administrer børn</title>
+  <title>Administrer børn – Solstrålen</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<h1>Børn i dagplejen</h1>
 
-<h2>Tilføj et barn</h2>
+<!-- Samme header som hjemmesiden -->
+<header>
+  <a href="index.html" class="logo">
+    <img src="images/langlogo.png" alt="Krudt, kram og krea logo">
+  </a>
 
-<form id="childForm">
-  <label for="name">Barnets navn:</label>
-  <input type="text" id="name" required>
+  <nav class="menu">
+    <a href="index.html">Forside</a>
+    <a href="om-mig.html">Om mig</a>
+    <a href="typisk-dag.html">En typisk dag</a>
+    <a href="forældre-siger.html">Forældre siger</a>
+    <a href="praktisk-information.html">Praktisk information</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
 
-  <label for="startDate">Startdato:</label>
-  <input type="date" id="startDate" required>
+<!-- Administration af børn -->
+<main class="children-admin">
 
-  <label for="endDate">Slutdato:</label>
-  <input type="date" id="endDate" required>
+  <h1>Børn i dagplejen</h1>
 
-  <button type="submit">Tilføj barn</button>
-</form>
+  <section>
+    <h2>Tilføj et barn</h2>
 
-<h2>Indskrevne børn</h2>
-<ul id="childrenList"></ul>
-<h2>Fjern et barn</h2>
+    <form id="childForm">
+      <label for="name">Barnets navn:</label>
+      <input type="text" id="name" required>
 
-<label for="childToRemove">Vælg barn, der skal fjernes:</label>
+      <label for="startDate">Startdato:</label>
+      <input type="date" id="startDate" required>
 
-<select id="childToRemove">
-  <option value="">Vælg et barn</option>
-</select>
+      <label for="endDate">Slutdato:</label>
+      <input type="date" id="endDate" required>
 
-<button type="button" id="removeChildButton">
-  Fjern barn
-</button>
-<script src="children.js"></script> <!-- Connect til javascript-->
+      <button type="submit">Tilføj barn</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Indskrevne børn</h2>
+    <ul id="childrenList"></ul>
+  </section>
+
+  <section>
+    <h2>Fjern et barn</h2>
+
+    <label for="childToRemove">
+      Vælg barn, der skal fjernes:
+    </label>
+
+    <select id="childToRemove">
+      <option value="">Vælg et barn</option>
+    </select>
+
+    <button type="button" id="removeChildButton">
+      Fjern barn
+    </button>
+  </section>
+
+</main>
+
+<script src="children.js"></script>
+
 </body>
 </html>
