@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Fredoka', sans-serif;
 }
 
 header{
@@ -10,6 +10,11 @@ header{
     padding: 0 50px;
     background-color: #faf9f5;
     height: 70px;
+
+    /* Header følger med, når man scroller */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
 }
 
 .logo{
@@ -46,3 +51,440 @@ header{
     height: 60px;
     width: auto;
 }
+
+/* ==================================
+   EN TYPISK DAG
+================================== */
+
+/* Den store sektion */
+.dag-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    min-height: 350px;
+    padding: 40px;
+    margin: 20px;
+
+    border-radius: 25px;
+
+    background-image: url("images/dag-hero.jpg");
+    background-size: cover;
+    background-position: center;
+
+    gap: 30px;
+}
+
+/*Tekstboksen til venstre*/
+.dag-hero-tekst {
+    position: relative;
+
+    align-self: flex-end;
+    margin-bottom: -40px;
+    margin-left: -40px;
+
+    background-color: #fffaf0;
+
+    padding: 55px 50px 90px 60px;
+
+    width: 420px;
+    max-width: 100%;
+    flex-shrink: 0;
+
+    border-radius: 0;
+
+    clip-path: shape(
+        from 0% 15%,
+        curve to 15% 2% with 0% 5%,
+        curve to 70% 0% with 40% 0%,
+        curve to 95% 18% with 90% 5%,
+        curve to 85% 65% with 100% 40%,
+        curve to 100% 100% with 75% 90%,
+        line to 0% 100%,
+        close
+        );
+}
+
+/* Overskrift */
+.dag-hero-tekst h1 {
+    font-size: 42px;
+    color: #164c3f;
+}
+
+/* Beskrivelse */
+.dag-hero-tekst p {
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* Den lille informationsboks til højre */
+.dag-hero-info {
+    position: relative;
+
+        background-color: #f8dcd3;
+
+        padding: 45px 40px;
+
+        width: 180px;
+        max-width: 100%;
+        flex-shrink: 0;
+
+        border-radius: 0;
+
+        clip-path: shape(
+            from 5% 25%,
+            curve to 30% 5% with 5% 5%,
+            curve to 70% 8% with 50% 0%,
+            curve to 95% 25% with 95% 5%,
+            curve to 90% 75% with 100% 50%,
+            curve to 65% 95% with 90% 95%,
+            curve to 25% 90% with 40% 100%,
+            curve to 5% 60% with 0% 85%,
+            curve to 5% 25% with 0% 40%,
+            close
+        );
+}
+
+/* Hjerte over overskriften */
+.dag-hjerte {
+    position: absolute;
+    top: 100px;
+    left: 55px;
+    width: 42px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Grøn gren langs venstre side */
+.dag-blad {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    width: 75px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Sol nederst på den cremefarvede boks */
+.dag-sol {
+    position: absolute;
+    bottom: 35px;
+    left: 350px;
+    width: 85px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Hjerte over den lyserøde sky */
+.dag-info-hjerte {
+    position: absolute;
+    top: 120px;
+    right: 245px;
+    width: 40px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Hele tidslinjen */
+.dag-tidslinje {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+    position: relative;
+}
+
+/* En aktivitet */
+.dag-aktivitet {
+    display: grid;
+    grid-template-columns: 160px 180px 1fr;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+/* Klokkeslæt */
+.dag-tid {
+    background-color: #819b78;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 30px;
+
+    width: 150px;
+    box-sizing: border-box;
+
+    text-align: center;
+    justify-self: center;
+}
+
+/* Billede */
+.dag-aktivitet-billede {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* Hvid tekstboks */
+.dag-aktivitet-tekst {
+    background-color: #faf9f5;
+    padding: 25px 35px;
+    border-radius: 20px;
+    flex: 1;
+}
+
+/* Overskrift */
+.dag-aktivitet-tekst h2 {
+    color: #28483e;
+    margin-top: 0;
+}
+
+/* Beskrivelse */
+.dag-aktivitet-tekst p {
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Rosa klokkeslæt */
+.dag-tid-rosa {
+    background-color: #df8f83;
+}
+
+/* Knap til aktiviteter */
+.dag-aktivitet-knap {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #e9eddf;
+    color: #28483e;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dag-aktivitet-knap:hover {
+    background-color: #d9e3ce;
+}
+
+/* Gult klokkeslæt til frokost */
+.dag-tid-gul {
+    background-color: #dfad42;
+}
+
+/* Grønt klokkeslæt til middagslur */
+.dag-tid-groen {
+    background-color: #819b78;
+}
+
+/* Rosa klokkeslæt til eftermiddagsmad */
+.dag-tid-rosa {
+    background-color: #e58f83;
+}
+
+.dag-tid-groen {
+    background-color: #819b78;
+}
+
+/* Gør det muligt at placere dekorationer i tekstboksene */
+.dag-aktivitet-tekst {
+    position: relative;
+    padding-right: 130px;
+}
+
+/* Dekorationer i højre side */
+.dag-dekoration {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Hele tidslinjen */
+.dag-tidslinje {
+    position: relative;
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 30px;
+}
+
+/* Den dekorative linje til venstre */
+.dag-tidslinje-pynt {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: -15px;
+    width: 30px;
+
+    pointer-events: none;
+}
+
+/* Grøn bølget streg */
+.dag-tidslinje-streg {
+    position: absolute;
+    width: 20px;
+    height: 100%;
+    left: 5px;
+}
+
+.dag-tidslinje-streg path {
+    fill: none;
+    stroke: #405d4d;
+    stroke-width: 1.5;
+    vector-effect: non-scaling-stroke;
+}
+
+/* Små hjerter */
+.dag-tidslinje-hjerte {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 2px;
+    transform: translateY(-50%);
+}
+
+/* Et hjerte ud for hver aktivitet */
+.dag-tidslinje-hjerte:nth-of-type(1) { top: 8.33%; }
+.dag-tidslinje-hjerte:nth-of-type(2) { top: 25%; }
+.dag-tidslinje-hjerte:nth-of-type(3) { top: 41.67%; }
+.dag-tidslinje-hjerte:nth-of-type(4) { top: 58.33%; }
+.dag-tidslinje-hjerte:nth-of-type(5) { top: 75%; }
+.dag-tidslinje-hjerte:nth-of-type(6) { top: 91.67%; }
+
+/* Afsluttende sektion */
+.dag-afslutning {
+    max-width: 1400px;
+    margin: 25px auto 60px;
+    padding: 25px 35px;
+    position: relative;
+
+    background-color: #e9eddf;
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+/* Tekst i venstre side */
+.dag-afslutning-tekst {
+    flex: 1;
+    max-width: 600px;
+    padding-left: 45px;
+}
+
+.dag-afslutning-tekst h2 {
+    color: #28483e;
+    font-size: 24px;
+    margin: 0 0 12px;
+}
+
+.dag-afslutning-tekst p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+/* Kontaktknap */
+.dag-afslutning-knap {
+    display: inline-block;
+    background-color: #55775b;
+    color: white;
+    padding: 11px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.dag-afslutning-knap:hover {
+    background-color: #35573f;
+}
+
+/* Billeder i højre side */
+.dag-afslutning-billeder {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.dag-afslutning-billede {
+    width: 200px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+/* Fælles styling for dekorationerne */
+.dag-afslutning > img {
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Hjerte ved overskriften */
+.dag-afslutning-hjerte-venstre {
+    width: 30px;
+    top: 25px;
+    left: 25px;
+}
+
+/* Stort blad nederst til venstre */
+.dag-afslutning-blad-venstre {
+    width: 75px;
+    bottom: 15px;
+    left: 10px;
+}
+
+/* Lille blad mellem tekst og billeder */
+.dag-afslutning-blad-midten {
+    width: 40px;
+    bottom: 10px;
+    right: 430px;
+    transform: rotate(-25deg);
+}
+
+/* Hjerte over billedet af barnet, der maler */
+.dag-afslutning-hjerte-billede {
+    width: 35px;
+    top: -12px;
+    right: 350px;
+}
+
+/* Blad øverst til højre */
+.dag-afslutning-blad-hoejre {
+    width: 55px;
+    top: -10px;
+    right: 10px;
+    transform: rotate(20deg);
+}
+
+/* Skrifttype til overskrifter */
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+
+/* Skrifttype til almindelig tekst */
+p {
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
