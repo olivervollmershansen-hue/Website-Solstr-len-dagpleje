@@ -1,21 +1,13 @@
 
-CREATE OR REPLACE FUNCTION check_end_dates(
-    v_date DATE
+CREATE OR REPLACE FUNCTION is_date_available(
+    p_date DATE
 )
-RETURNS INTEGER
-LANGUAGE plpgsql
+RETURNS BOOLEAN
+LANGUAGE SQL
+STABLE
 AS $$
-BEGIN
-    IF EXISTS (
-        SELECT 1
-        FROM Enlisted_children
-        WHERE End_date < v_date
-    ) THEN
-        RETURN 1;
-    ELSE
-        RETURN 0;
-    END IF;
-END;
+    SELECT COUNT(*) < 3
+    FROM Enlisted_children
+    WHERE Start_date <= p_date
+      AND End_date >= p_date;
 $$;
-
-## Returnerer 1 hvis der er plads, og 0 hvis der ikke er plads
