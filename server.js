@@ -40,14 +40,29 @@ app.get('/api/availability', async (req, res) => {
       available: result.rows[0].available
     });
   } catch (error) {
-    console.error('Availability check failed:', error.message);
+    console.error('Availability check failed:', error);
 
     res.status(500).json({
       error: 'Unable to check availability right now.'
     });
   }
 });
+// Hent alle indskrevne børn fra Neon
+app.get("/api/children", async (req, res) => {
+  try {
+    const result = await pool.query(
+        "SELECT id, name, start_date, end_date FROM enlisted_children ORDER BY start_date"
+    );
 
+    res.json(result.rows);
+
+  } catch (error) {
+    console.error("Could not fetch children:", error);
+    res.status(500).json({
+      error: "Could not fetch children"
+    });
+  }
+});
 // Serve your existing HTML, CSS and images.
 app.use(express.static(__dirname));
 

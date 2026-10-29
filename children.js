@@ -1,10 +1,40 @@
 
 let children = [];
 
+
 const form = document.getElementById("childForm");
 const childrenList = document.getElementById("childrenList");
 const childToRemove = document.getElementById("childToRemove");
 const removeChildButton = document.getElementById("removeChildButton");
+
+// HENT BØRN FRA NEON-DATABASEN
+async function loadChildren() {
+    try {
+        const response = await fetch("/api/children");
+
+        if (!response.ok) {
+            throw new Error("Kunne ikke hente børn fra databasen");
+        }
+
+        const data = await response.json();
+
+        children = data.map(function(child) {
+            return {
+                id: String(child.id),
+                name: child.name,
+                startDate: child.start_date.slice(0, 10),
+                endDate: child.end_date.slice(0, 10)
+            };
+        });
+
+        showChildren();
+
+    } catch (error) {
+        console.error("Fejl ved hentning af børn:", error);
+    }
+}
+
+loadChildren();
 
 // TILFØJ ET BARN
 form.addEventListener("submit", function(event) {
@@ -85,3 +115,4 @@ removeChildButton.addEventListener("click", function() {
         showChildren();
     }
 });
+
