@@ -7,6 +7,10 @@
 
     <title>Typisk dag</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,6 +33,312 @@
 
     </header>
 
+    <main>
+
+        <section class="dag-hero">
+
+            <!-- Dekorationer -->
+            <img src="images/hjerte.svg" class="dag-hjerte" alt="">
+            <img src="images/blad.png" class="dag-blad" alt="">
+            <img src="images/sol.svg" class="dag-sol" alt="">
+            <img src="images/hjerte-outline.svg" class="dag-info-hjerte" alt="">
+
+            <div class="dag-hero-tekst">
+
+                <h1>En typisk dag</h1>
+
+                <p>
+                    Hos Krudt, Kram og Krea har vi en tryg og
+                    genkendelig hverdag med plads til både
+                    faste rutiner og spontane oplevelser.
+                </p>
+            </div>
+
+            <div class="dag-hero-info">
+
+                <p>
+                    Dagene kan variere afhængigt af vejret,
+                    børnenes behov og de aktiviteter,
+                    vi har planlagt.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tidslinje for en typisk dag -->
+        <section class="dag-tidslinje">
+
+            <!-- Dekorativ tidslinje med hjerter -->
+            <div class="dag-tidslinje-pynt" aria-hidden="true">
+                <svg class="dag-tidslinje-streg"
+                     viewBox="0 0 20 1000"
+                     preserveAspectRatio="none">
+                    <path d="M10 0
+                 C2 90, 18 160, 10 250
+                 S18 410, 10 500
+                 S2 660, 10 750
+                 S18 910, 10 1000" />
+                </svg>
+
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+                <img src="images/hjerte.svg" class="dag-tidslinje-hjerte" alt="">
+            </div>
+
+            <!-- Første aktivitet -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid">
+                    <span>Kl. 07.00</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/morgenmad.jpg"
+                     alt="Morgenmad"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+                    <h2>Godmorgen</h2>
+
+                    <p>
+                        Krudt, Kram og Krea åbner, og vi tager imod børnene.
+                        De børn, der kommer tidligt, får tilbudt morgenmad,
+                        og vi starter dagen i et roligt tempo.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/kaffekop.png"
+                         alt=""
+                         class="dag-dekoration">
+                </div>
+
+            </div>
+
+            <!-- Anden aktivitet: Kl. 09.00 -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid dag-tid-rosa">
+                    <span>Ca. kl. 09.00</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/gummistoevler.jpg"
+                     alt="Børn leger i vandpytter"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+
+                    <h2>Formiddagsmad og aktiviteter</h2>
+
+                    <p>
+                        Vi spiser formiddagsmad og gør os klar til dagens aktiviteter.
+                        Herefter tager vi måske på tur, leger i haven, laver kreative
+                        aktiviteter eller hygger os indenfor.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/trae.png"
+                         alt=""
+                         class="dag-dekoration">
+
+                </div>
+
+            </div>
+
+            <!-- Tredje aktivitet: Frokost -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid dag-tid-gul">
+                    <span>Ca. kl. 11.00</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/frokost.jpg"
+                     alt="Frokost til børnene"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+
+                    <h2>Frokost</h2>
+
+                    <p>
+                        Vi samles og spiser frokost sammen.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/bestik.png"
+                         alt=""
+                         class="dag-dekoration">
+
+                </div>
+
+            </div>
+
+            <!-- Fjerde aktivitet: Middagslur -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid dag-tid-groen">
+                    <span>Ca. kl. 12.00</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/middagslur.jpg"
+                     alt="Børn sover middagslur i barnevogne"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+
+                    <h2>Middagslur</h2>
+
+                    <p>
+                        Efter frokost er det tid til en velfortjent lur.
+                        Børnene sover enten udenfor i barnevogn eller
+                        indenfor i telt, alt efter deres behov.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/maane.png"
+                         alt=""
+                         class="dag-dekoration">
+
+                </div>
+
+            </div>
+
+            <!-- Femte aktivitet: Eftermiddagsmad og leg -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid dag-tid-rosa">
+                    <span>Ca. kl. 13.00</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/eftermiddagsmad.jpg"
+                     alt="Eftermiddagsmad til børnene"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+
+                    <h2>Eftermiddagsmad og leg</h2>
+
+                    <p>
+                        Når børnene er vågnet, spiser vi eftermiddagsmad.
+                        Derefter leger vi, laver kreative aktiviteter eller
+                        er ude i haven – alt efter vejret og børnenes energi.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/sol.svg"
+                         alt=""
+                         class="dag-dekoration">
+
+                </div>
+
+            </div>
+
+            <!-- Sjette aktivitet: Tak for i dag -->
+            <div class="dag-aktivitet">
+
+                <!-- Klokkeslæt -->
+                <div class="dag-tid dag-tid-groen">
+                    <span>Kl. 16.00<br>(16.30)</span>
+                </div>
+
+                <!-- Billede -->
+                <img src="images/tak-for-i-dag.jpg"
+                     alt="Barn med hænderne fulde af naturens skatte"
+                     class="dag-aktivitet-billede">
+
+                <!-- Beskrivelse -->
+                <div class="dag-aktivitet-tekst">
+
+                    <h2>Tak for i dag</h2>
+
+                    <p>
+                        Vi leger og hygger, indtil børnene bliver hentet.
+                        Fredag lukker vi kl. 16.00.
+                    </p>
+
+                    <!-- Dekoration -->
+                    <img src="images/hus.png"
+                         alt=""
+                         class="dag-dekoration">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Afsluttende sektion -->
+        <section class="dag-afslutning">
+
+            <!-- Dekorationer -->
+            <img src="images/hjerte.svg"
+                 class="dag-afslutning-hjerte-venstre"
+                 alt="">
+
+            <img src="images/blad.png"
+                 class="dag-afslutning-blad-venstre"
+                 alt="">
+
+            <img src="images/blad.png"
+                 class="dag-afslutning-blad-midten"
+                 alt="">
+
+            <img src="images/hjerte.svg"
+                 class="dag-afslutning-hjerte-billede"
+                 alt="">
+
+            <img src="images/blad.png"
+                 class="dag-afslutning-blad-hoejre"
+                 alt="">
+
+            <!-- Tekst i venstre side -->
+            <div class="dag-afslutning-tekst">
+
+                <h2>En hverdag med plads til det hele</h2>
+
+                <p>
+                    Hos mig er der plads til både faste rutiner,
+                    spontane eventyr, beskidte fingre, kreative
+                    projekter og masser af krudt, kram og krea.
+                </p>
+
+                <a href="kontakt.html" class="dag-afslutning-knap">
+                    Kontakt mig, hvis I vil vide mere →
+                </a>
+
+            </div>
+
+            <!-- Billeder i højre side -->
+            <div class="dag-afslutning-billeder">
+
+                <img src="images/kreativ-leg.jpg"
+                     alt="Barn der maler"
+                     class="dag-afslutning-billede">
+
+                <img src="images/kanin.jpg"
+                     alt="Kanin i haven"
+                     class="dag-afslutning-billede">
+
+            </div>
+
+        </section>
+
+    </main>
 </body>
 
 </html>
