@@ -1,10 +1,47 @@
+
+/* ============================================================
+   KRUDT, KRAM OG KREA - STYLE.CSS
+   Indholdsfortegnelse:
+   1. Grundlaeggende styling og typografi
+   2. Header og navigation (alle sider)
+   3. Forside
+   4. Om mig (klar til ny CSS)
+   5. En typisk dag
+   6. Foraeldre siger (klar til ny CSS)
+   7. Praktisk information (klar til ny CSS)
+   8. Kontakt (klar til ny CSS)
+   9. Faelles responsivt design (klar til ny CSS)
+
+   OBS: Eksisterende CSS-regler er bevaret uændret og kun
+   flyttet i samlede afsnit. Ingen størrelser eller farver er rettet.
+============================================================ */
+
+/* ============================================================
+   1. GRUNDLÆGGENDE STYLING OG TYPOGRAFI
+============================================================ */
+
 body{
     margin: 0;
     font-family: 'Fredoka', sans-serif;
 }
 
+/* Skrifttype til overskrifter */
+h1, h2, h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 600;
+}
+
+/* Skrifttype til almindelig tekst */
+p {
+    font-weight: 400;
+}
+
+/* ============================================================
+   2. HEADER OG NAVIGATION
+============================================================ */
+
 header{
-    display: flex; 
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
@@ -26,7 +63,7 @@ header{
     display: flex;
     gap: 28px;
     align-items: center;
-    margin-left: 40px; /*change a "auto" pour que le menu soit au milieu*/ 
+    margin-left: 40px; /*change a "auto" pour que le menu soit au milieu*/
     margin-right: 0;  /*change a "auto pour que le menu soit au milieu*/
 }
 
@@ -51,6 +88,450 @@ header{
     height: 60px;
     width: auto;
 }
+
+/* ============================================================
+   3. FORSIDE
+============================================================ */
+
+/* =========================
+   FORSIDE - VELKOMST
+========================= */
+
+.hero {
+    margin: 20px 50px;
+    min-height: 400px;
+
+    background-image: url("images/forside-barn.png");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 30px;
+}
+
+/* =========================
+   FORSIDE - ORGANISK TEKSTBOKS
+========================= */
+
+.hero-content {
+    position: relative;
+
+    background-color: #fffaf0;
+
+    width: 620px;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    padding: 45px 65px 50px 55px;
+
+    border-radius: 0;
+
+    clip-path: shape(
+        from 3% 35%,
+
+        /* Blød runding øverst til venstre */
+        curve to 25% 7% with 3% 12% / 10% 5%,
+
+        /* Let bølget top */
+        curve to 60% 8% with 40% 5% / 45% 12%,
+
+        /* Blød overgang mod højre */
+        curve to 95% 35% with 80% 3% / 95% 15%,
+
+        /* Stor afrundet højre side */
+        curve to 88% 75% with 100% 55% / 95% 65%,
+
+        /* Flydende afrunding nederst */
+        curve to 60% 94% with 80% 90% / 75% 95%,
+
+        /* Blød bund */
+        curve to 20% 94% with 45% 98% / 30% 95%,
+
+        /* Nederste venstre runding */
+        curve to 3% 75% with 5% 94% / 2% 85%,
+
+        /* Tilbage til toppen */
+        curve to 3% 35% with 2% 60% / 2% 45%,
+
+        close
+    );
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    color: #23483d;
+}
+
+.hero-text p {
+    font-size: 16px;
+    line-height: 1.6;
+
+    color: #23483d;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 20px;
+    padding: 12px 30px;
+
+    background-color: #547a58;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #355b3d;
+}
+/* Farver der matcher logoet */
+
+.krudt {
+    color: #48766B;
+}
+
+.kram {
+    color: #C95F58;
+}
+
+.og {
+    color: #E3AD43;
+}
+
+.krea {
+    color: #687F3D;
+}
+
+/* Hjerte i velkomstboksen */
+.hero-heart {
+    display: block;
+    width: 35px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Gren i velkomstboksen */
+
+.hero-leaf {
+    position: absolute;
+
+    width: 125px;
+    height: auto;
+
+    right: 15px;
+    bottom: 150px;
+
+    transform: rotate(-15deg);
+
+    pointer-events: none;
+}
+
+/* =========================
+   FORSIDE - LEDIGE PLADSER
+========================= */
+
+.availability-checker {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin: 20px 50px;
+    padding: 25px 35px;
+
+    background-color: #f0f3e9;
+    border-radius: 25px;
+
+    flex-wrap: wrap;
+}
+
+.availability-icon {
+    width: 65px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.availability-text {
+    flex: 1;
+    min-width: 250px;
+}
+
+.availability-text h2 {
+    font-size: 26px;
+    color: #23483d;
+    margin: 0 0 8px;
+}
+
+.availability-text p {
+    font-size: 15px;
+    color: #23483d;
+    margin: 0;
+}
+
+.availability-form {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.availability-form input {
+    padding: 12px 15px;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+}
+
+.availability-form button {
+    padding: 13px 25px;
+    background-color: #547a58;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.availability-form button:hover {
+    background-color: #355b3d;
+}
+
+#availability-result {
+    flex-basis: 100%;
+    margin: 0;
+    color: #23483d;
+}
+
+/* Skjuler label visuelt, men bevarer den for skærmlæsere */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 850px) {
+    .availability-checker {
+        margin: 20px;
+        padding: 25px;
+    }
+
+    .availability-form {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================
+   FORSIDE - DAGPLEJENS VÆRDIER
+========================= */
+
+.home-values {
+    margin: 35px 50px;
+    text-align: center;
+}
+
+/* Overskrift */
+
+.values-heading {
+    margin-bottom: 25px;
+}
+
+.values-heading h2 {
+    font-size: 32px;
+    color: #23483d;
+    margin-bottom: 8px;
+}
+
+.values-heading p {
+    font-size: 16px;
+    color: #23483d;
+    margin: 0;
+}
+
+/* De fire kort */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.value-card {
+    padding: 25px 20px;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 220px;
+}
+
+/* Baggrundsfarver */
+
+.value-pink {
+    background-color: #fae9e5;
+}
+
+.value-green {
+    background-color: #eef2e8;
+}
+
+.value-yellow {
+    background-color: #fff4db;
+}
+
+/* Illustrationer */
+
+/* Fælles størrelse og placering */
+
+.value-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+/* Hjertet */
+.value-card:nth-child(1) .value-icon {
+    transform: scale(1);
+}
+
+/* Grenen */
+.value-card:nth-child(2) .value-icon {
+    transform: scale(1.1);
+}
+
+/* Regnbuen */
+.value-card:nth-child(3) .value-icon {
+    transform: scale(1.8);
+}
+
+/* Blomsten */
+.value-card:nth-child(4) .value-icon {
+    transform: scale(2);
+}
+
+/* Tekst */
+
+.value-card h3 {
+    font-size: 23px;
+    color: #23483d;
+    margin: 0 0 12px;
+}
+
+.value-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #23483d;
+    margin: 0;
+}
+
+/* Fælles knap */
+
+.values-button {
+    display: inline-block;
+    margin-top: 25px;
+
+    padding: 13px 40px;
+
+    background-color: #547a58;
+    color: white;
+
+    border-radius: 30px;
+    text-decoration: none;
+
+    font-family: 'Fredoka', sans-serif;
+    font-size: 17px;
+
+    transition: background-color 0.3s;
+}
+
+.values-button:hover {
+    background-color: #355b3d;
+}
+
+/* Mobil og tablet */
+
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .home-values {
+        margin: 30px 20px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Gule solstråler på begge sider af knappen */
+
+.values-button {
+    position: relative;
+}
+
+.values-button::before,
+.values-button::after {
+    content: "";
+    position: absolute;
+
+    width: 40px;
+    height: 55px;
+
+    top: 50%;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 55'%3E%3Cpath d='M30 12 L15 3 M28 27 L8 27 M30 42 L15 51' stroke='%23E8AF28' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3C/svg%3E");
+}
+
+/* Venstre side */
+
+.values-button::before {
+    left: -48px;
+    transform: translateY(-50%);
+}
+
+/* Højre side */
+
+.values-button::after {
+    right: -48px;
+    transform: translateY(-50%) scaleX(-1);
+}
+
+/* ============================================================
+   4. OM MIG
+============================================================ */
+
+/* Her indsættes styling til om-mig.html, når siden implementeres. */
+
+/* ============================================================
+   5. EN TYPISK DAG
+============================================================ */
 
 /* ==================================
    EN TYPISK DAG
@@ -466,25 +947,28 @@ header{
     transform: rotate(20deg);
 }
 
-/* Skrifttype til overskrifter */
-h1, h2, h3 {
-    font-family: 'Fredoka', sans-serif;
-    font-weight: 600;
-}
+/* ============================================================
+   6. FORÆLDRE SIGER
+============================================================ */
 
-/* Skrifttype til almindelig tekst */
-p {
-    font-weight: 400;
-}
+/* Her indsættes styling til forældre-siger.html. */
 
+/* ============================================================
+   7. PRAKTISK INFORMATION
+============================================================ */
 
+/* Her indsættes styling til praktisk-information.html. */
 
+/* ============================================================
+   8. KONTAKT
+============================================================ */
 
+/* Her indsættes styling til kontakt.html. */
 
+/* ============================================================
+   9. FÆLLES RESPONSIVT DESIGN
+============================================================ */
 
-
-
-
-
-
-
+/* Fremtidige fælles mobil- og tabletregler.
+   Eksisterende media queries ligger fortsat ved deres sektioner
+   for at bevare den nuværende CSS-rækkefølge. */
