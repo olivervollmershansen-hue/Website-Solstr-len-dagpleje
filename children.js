@@ -36,35 +36,61 @@ async function loadChildren() {
 
 loadChildren();
 
-// TILFØJ ET BARN
-form.addEventListener("submit", function(event) {
+
+ // TILFØJ ET BARN
+form.addEventListener("submit", async function(event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value.trim();
     const startDate = document.getElementById("startDate").value;
     const endDate = document.getElementById("endDate").value;
 
+    // Kontrollér at alle felter er udfyldt.
     if (!name || !startDate || !endDate) {
+        alert("Du skal udfylde alle felter.");
         return;
     }
 
+    // Kontrollér at slutdatoen ikke ligger før startdatoen.
     if (endDate < startDate) {
         alert("Slutdato skal være efter startdato.");
         return;
     }
 
-    const child = {
-        id: crypto.randomUUID(),
-        name: name,
-        startDate: startDate,
-        endDate: endDate
-    };
+    try {
+        // Send barnets oplysninger til serveren.
+        const response = await fetch("/api/children", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                name: name,
+                startDate: startDate,
+                endDate: endDate
+            })
+        });
 
-    children.push(child);
+        const result = await response.json();
 
-    showChildren();
-    form.reset();
+        if (!response.ok) {
+            throw new Error(result.error || "Kunne ikke tilføje barnet.");
+        }
+
+        // Hent den opdaterede liste fra databasen.
+        await loadChildren();
+
+        // Ryd formularen.
+        form.reset();
+
+        alert("Barnet blev tilføjet.");
+
+    } catch (error) {
+        console.error("Fejl ved tilføjelse af barn:", error);
+        alert(error.message);
+    }
 });
+
 
 // VIS ALLE BØRN
 function showChildren() {
@@ -88,8 +114,8 @@ function showChildren() {
     });
 }
 
-// FJERN ET BARN
-removeChildButton.addEventListener("click", function() {
+// FJERN ET BARN FRA DATABASEN
+removeChildButton.addEventListener("click", async function() {
     const selectedId = childToRemove.value;
 
     if (!selectedId) {
@@ -107,12 +133,28 @@ removeChildButton.addEventListener("click", function() {
         "Er du sikker på, at du vil fjerne " + child.name + "?"
     );
 
-    if (confirmed) {
-        children = children.filter(function(c) {
-            return c.id !== selectedId;
+    if (!confirmed) return;
+
+    try {
+        // Send en DELETE-forespørgsel til serveren.
+        const response = await fetch("/api/children/" + selectedId, {
+            method: "DELETE"
         });
 
-        showChildren();
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || "Kunne ikke fjerne barnet.");
+        }
+
+        // Hent den opdaterede liste fra databasen.
+        await loadChildren();
+
+        alert("Barnet blev fjernet.");
+
+    } catch (error) {
+        console.error("Fejl ved sletning af barn:", error);
+        alert(error.message);
     }
 });
 
