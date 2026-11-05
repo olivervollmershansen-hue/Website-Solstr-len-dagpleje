@@ -68,7 +68,7 @@ app.get("/api/children", async (req, res) => {
 
  // TILFØJ ET BARN TIL DATABASEN
 app.post('/api/children', async (req, res) => {
-  const { name, startDate, endDate } = req.body;
+  const { name, startDate, endDate } = req.body || {};
 
   // Tjekker at brugeren har udfyldt navn og begge datoer.
    if(
