@@ -28,30 +28,241 @@
         </nav>
     </header>
 
+    <!-- Velkomstsektion -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <h1>
+                    <img src="images/hjerte.svg" alt="" class="hero-heart">
+                    Velkommen til <br>
+                    <span class="krudt">Krudt,</span>
+                    <span class="kram">Kram</span>
+                    <span class="og">og</span>
+                    <span class="krea">Krea</span>
+                </h1>
+
+                <p>
+                    En lille privat dagpleje med masser af tryghed,
+                    nærvær og plads til at være barn.
+                    Her er der tid til leg, kreativitet,
+                    små eventyr og hyggelige stunder
+                    i rolige, hjemlige rammer.
+                </p>
+
+            </div>
+
+            <img src="images/blad.png" alt="" class="hero-leaf">
+
+        </div>
+
+    </section>
 
 <!-- Søgebaren for at se om der er plads -->  
 <!-- Søgebaren for at se om der er plads -->
 <!-- Søgebaren for at se om der er plads -->
-<section class="availability-checker">
-  <h2>Se tilgængelighed</h2>
-  <p>Vælg den dato du kunne tænke dig dit barn starter, og se om vi har plads</p>
+    <!-- Hvornår kan dit barn starte? -->
+    <section class="availability-checker">
 
-  <form id="availability-form">
-    <label for="availability-date">Vælg en dato:</label>
+        <img src="images/sol.svg" alt="" class="availability-icon">
 
-    <input
-      type="date"
-      id="availability-date"
-      required
-    >
+        <div class="availability-text">
+            <h2>Hvornår kan dit barn starte?</h2>
+            <p>
+                Find ud af, om der er en ledig plads til dit barn
+                på den ønskede startdato.
+            </p>
+        </div>
 
-    <button type="submit">Se tilgængelighed</button>
-  </form>
+        <form id="availability-form" class="availability-form">
 
-  <p id="availability-result"
-     role="status"
-     aria-live="polite"></p>
-</section>
+            <label for="availability-date" class="sr-only">
+                Ønsket startdato
+            </label>
+
+            <input
+                    type="date"
+                    id="availability-date"
+                    required
+            >
+
+            <button type="submit">
+                Tjek ledige pladser →
+            </button>
+
+        </form>
+
+        <p id="availability-result"
+           role="status"
+           aria-live="polite"></p>
+
+    </section>
+
+    <!-- =========================
+     FORSIDE - DAGPLEJENS VÆRDIER
+========================= -->
+
+    <section class="home-values">
+
+        <div class="values-heading">
+
+            <div class="values-title">
+                <img src="images/hjerte.svg" alt="" class="values-heart">
+
+                <h2>Her er der plads til at være barn</h2>
+
+                <span class="values-rays" aria-hidden="true"></span>
+            </div>
+
+            <p>
+                Hos mig handler hverdagen om tryghed,
+                nysgerrighed og glæden ved de små øjeblikke.
+            </p>
+
+        </div>
+
+        <div class="values-grid">
+
+            <!-- Tryghed og nærvær -->
+            <article class="value-card value-pink">
+                <img src="images/hjerte.svg" alt="" class="value-icon">
+
+                <h3>Tryghed og nærvær</h3>
+
+                <p>
+                    Hvert barn bliver set og mødt med omsorg.
+                </p>
+            </article>
+
+            <!-- Natur og udeliv -->
+            <article class="value-card value-green">
+                <img src="images/blad.png" alt="" class="value-icon">
+
+                <h3>Natur og udeliv</h3>
+
+                <p>
+                    Vi udforsker haven og naturen året rundt.
+                </p>
+            </article>
+
+            <!-- Leg og kreativitet -->
+            <article class="value-card value-yellow">
+                <img src="images/regnbue.png" alt="" class="value-icon">
+
+                <h3>Leg og kreativitet</h3>
+
+                <p>
+                    Vi bruger fantasien gennem musik,
+                    leg og kreative aktiviteter.
+                </p>
+            </article>
+
+            <!-- Hjemlig atmosfære -->
+            <article class="value-card value-pink">
+                <img src="images/blomst.png" alt="" class="value-icon">
+
+                <h3>En hjemlig atmosfære</h3>
+
+                <p>
+                    Små børnegrupper og rolige rammer
+                    i mit hjem.
+                </p>
+            </article>
+
+        </div>
+
+        <!-- Fælles knap -->
+        <a href="typisk-dag.html" class="values-button">
+            Oplev en typisk dag →
+        </a>
+
+    </section>
+
+    <!-- ==================================================
+     FORSIDE - MØD TINA
+================================================== -->
+
+    <section class="home-tina">
+
+        <!-- Billede af Tina -->
+        <div class="home-tina-image">
+            <img src="images/portrætbillede.png"
+                 alt="Tina - privat dagplejer">
+        </div>
+
+        <!-- Introduktion -->
+        <div class="home-tina-text">
+
+            <h2>Hej, jeg hedder Tina</h2>
+
+            <p>
+                Jeg har arbejdet som dagplejer siden 2002,
+                og jeg elsker at skabe en tryg og hyggelig hverdag,
+                hvor børnene kan udforske verden i deres eget tempo.
+                Hos mig er der plads til både store grin,
+                små eventyr og masser af kram.
+            </p>
+
+            <a href="om-mig.html" class="home-tina-button">
+                Læs mere om mig →
+            </a>
+
+        </div>
+
+        <!-- Dekorationer -->
+        <img src="images/hjerte.svg"
+             alt=""
+             class="home-tina-heart">
+
+        <img src="images/blad.png"
+             alt=""
+             class="home-tina-leaf">
+
+    </section>
+
+    <!-- ==================================================
+     FORSIDE - KONTAKTSEKTION
+================================================== -->
+
+    <section class="home-contact">
+
+        <!-- Billede til venstre -->
+        <div class="home-contact-image">
+            <img src="images/barn_der_holder_blomst.png"
+                 alt="Barn der holder margueritter">
+        </div>
+
+        <!-- Tekst i midten -->
+        <div class="home-contact-text">
+
+            <div class="home-contact-heading">
+
+                <img src="images/hjerte.svg"
+                     alt=""
+                     class="home-contact-heart">
+
+                <h2>Har du spørgsmål?</h2>
+
+            </div>
+
+            <p>
+                Du er altid velkommen til at kontakte mig
+                for en uforpligtende snak eller et besøg.
+            </p>
+
+        </div>
+
+        <!-- Kontaktknap -->
+        <a href="kontakt.html" class="home-contact-button">
+            ✉ Kontakt mig →
+        </a>
+
+        <!-- Gule solstråler -->
+        <span class="home-contact-rays" aria-hidden="true"></span>
+
+    </section>
 
 <script>
   const form = document.getElementById('availability-form');
