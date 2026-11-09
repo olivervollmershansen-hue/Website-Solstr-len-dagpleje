@@ -1811,7 +1811,49 @@ header{
         font-size: 13px;
     }
 }
+/* Sol ved åbningstider */
+.aabningstider .sol-deko {
+    width: 110px;
+    height: 110px;
+    max-width: 110px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
 
+.overskrift-hjerte {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+/* Hjerter ved overskrifter */
+.overskrift-hjerte {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+/* Sol ved kontaktsektionen */
+.praktisk-kontakt .kontakt-sol {
+    width: 110px;
+    height: 110px;
+    max-width: 110px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+.praktisk-kontakt .kontakt-tekst h2 .overskrift-hjerte {
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    min-width: 35px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
 ============================================================ */
 
 /* Her indsættes styling til praktisk-information.html. */
