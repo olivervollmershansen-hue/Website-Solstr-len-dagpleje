@@ -177,6 +177,15 @@ app.delete('/api/children/:id', async (req, res) => {
 });
 
 
+    res.json(result.rows);
+
+  } catch (error) {
+    console.error("Could not fetch children:", error);
+    res.status(500).json({
+      error: "Could not fetch children"
+    });
+  }
+});
 // Serve your existing HTML, CSS and images.
 app.use(express.static(__dirname));
 

@@ -116,6 +116,8 @@ function showChildren() {
 
 // FJERN ET BARN FRA DATABASEN
 removeChildButton.addEventListener("click", async function() {
+// FJERN ET BARN
+removeChildButton.addEventListener("click", function() {
     const selectedId = childToRemove.value;
 
     if (!selectedId) {
@@ -155,6 +157,12 @@ removeChildButton.addEventListener("click", async function() {
     } catch (error) {
         console.error("Fejl ved sletning af barn:", error);
         alert(error.message);
+    if (confirmed) {
+        children = children.filter(function(c) {
+            return c.id !== selectedId;
+        });
+
+        showChildren();
     }
 });
 

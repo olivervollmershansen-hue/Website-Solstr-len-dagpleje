@@ -1255,6 +1255,955 @@ header{
 
 /* ============================================================
    7. PRAKTISK INFORMATION
+/* HERO */
+
+.reviews-hero {
+    margin: 20px 50px 40px;
+    min-height: 480px;
+    background-image: url("images/forside-barn.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    box-sizing: border-box;
+}
+
+.reviews-hero-content {
+    background-color: #fffaf0;
+    max-width: 520px;
+    padding: 40px;
+    border-radius: 30px;
+}
+
+.reviews-hero .eyebrow {
+    color: #547a58;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.reviews-hero h1 {
+    color: #23483d;
+    font-size: 38px;
+    margin: 12px 0;
+}
+
+.reviews-hero p {
+    color: #23483d;
+    line-height: 1.6;
+}
+
+.reviews-hero-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #547a58;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.reviews-hero-button:hover {
+    background-color: #355b3d;
+}
+
+
+/* ANMELDELSER */
+
+main > section[aria-labelledby="reviewsHeading"] {
+    margin: 35px 50px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.review-card {
+    background-color: #fffaf0;
+    padding: 28px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 4px 15px #23483d12;
+}
+
+.review-stars {
+    color: #e8af28;
+    font-size: 24px;
+}
+
+
+/* FORMULAR - TO KOLONNER */
+
+.form-section {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: center;
+    gap: 35px;
+
+    margin: 60px 50px !important;
+    padding: 40px !important;
+
+    box-sizing: border-box;
+    background-color: #fae9e5 !important;
+    border: none;
+    border-radius: 30px;
+    box-shadow: none;
+}
+
+
+/* VENSTRE SIDE */
+
+.form-intro {
+    text-align: center;
+    padding: 20px;
+}
+
+.form-illustration {
+   display: block;
+       width: 100% !important;
+       max-width: 560px;
+       aspect-ratio: 16 / 9;
+       object-fit: cover;
+       border-radius: 28px;
+       height: auto;
+       margin: 0 auto 30px;
+}
+
+.form-intro h2 {
+    font-size: 32px;
+    color: #23483d;
+    margin-bottom: 20px;
+}
+
+.form-intro p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #23483d;
+}
+
+.form-thanks {
+    font-weight: 600;
+    margin-top: 25px;
+}
+
+
+/* HØJRE SIDE */
+
+.form-section-content {
+    min-width: 0;
+    box-sizing: border-box;
+    background-color: #fffaf0;
+    padding: 35px;
+    border-radius: 25px;
+}
+
+.form-section-content .section-heading h2 {
+    color: #23483d;
+    font-size: 28px;
+}
+
+.form-section-content .section-heading p {
+    color: #23483d;
+    line-height: 1.6;
+}
+
+.form-section form {
+    display: grid;
+    gap: 20px;
+}
+
+.form-group {
+    display: grid;
+    gap: 9px;
+}
+
+.form-group label {
+    color: #23483d;
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #e1d5cf;
+    border-radius: 15px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 15px;
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    min-height: 160px;
+    line-height: 1.6;
+}
+
+.form-group textarea::placeholder,
+.form-group input::placeholder {
+    color: #aaa99f;
+    opacity: 1;
+}
+
+.form-group textarea:focus,
+.form-group input:focus,
+.form-group select:focus {
+    outline: 2px solid #819b78;
+    border-color: #547a58;
+}
+
+.form-help {
+    color: #88877e;
+}
+
+.primary-button {
+    justify-self: start;
+    padding: 14px 32px;
+    background-color: #547a58;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    background-color: #355b3d;
+}
+
+
+/* MOBILVISNING */
+
+@media (max-width: 850px) {
+
+    .reviews-hero {
+        margin: 20px;
+        padding: 20px;
+        min-height: 400px;
+    }
+
+    .reviews-hero-content {
+        padding: 25px;
+    }
+
+    main > section[aria-labelledby="reviewsHeading"] {
+        margin: 30px 20px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        grid-template-columns: 1fr !important;
+        margin: 30px 20px !important;
+        padding: 25px !important;
+        gap: 20px;
+    }
+
+    .form-intro {
+        padding: 10px;
+    }
+
+    .form-illustration {
+        width: 250px !important;
+    }
+
+    .form-section-content {
+        padding: 22px;
+    }
+}
+
+
+/* DEKORATIONER PÅ FORÆLDRESIDEN */
+
+.form-intro {
+    position: relative;
+}
+
+/* Hjerte ved overskriften */
+.form-intro h2::after {
+    content: " ❤️";
+}
+
+/* Blomster ved formularens overskrift */
+.form-section-content .section-heading h2::before {
+    content: "🌼 ";
+}
+
+/* Lille dekorativ detalje ved anmeldelsesoverskriften */
+#reviewsHeading::before {
+    content: "💚 ";
+}
+
+/* Runde anmeldelseskort */
+.review-card {
+    border-radius: 25px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px #23483d18;
+}
+
+
+/* HEADER OG NAVIGATION */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background-color: #faf9f5;
+    height: 70px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+}
+
+.menu {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 0;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 5px 0;
+}
+
+.menu a:hover {
+    color: #666;
+}
+
+.menu a.active {
+    border-bottom: 2px solid #333;
+    font-weight: bold;
+}
+
+
+
+/* ============================================================
+   7. PRAKTISK INFORMATION
+
+.praktisk-side {
+    max-width: 1250px;
+    margin: 30px auto 70px;
+    padding: 0 25px;
+    font-family: 'Fredoka', sans-serif;
+    color: #252525;
+}
+
+.praktisk-side * {
+    box-sizing: border-box;
+}
+
+.praktisk-side h1,
+.praktisk-side h2,
+.praktisk-side h3,
+.praktisk-side p {
+    margin-top: 0;
+}
+
+/* VELKOMSTBANNER */
+
+.praktisk-hero {
+    min-height: 270px;
+    border-radius: 22px;
+    background-image: url("images/praktisk-baggrund.png");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 35px;
+    margin-bottom: 18px;
+}
+
+.hero-tekst {
+    background: #fffaf5;
+    border-radius: 90px;
+    padding: 28px 45px;
+    max-width: 530px;
+    position: relative;
+    text-align: center;
+}
+
+.hero-tekst h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero-tekst p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.deko-hjerte {
+    color: #df5249;
+    font-size: 38px;
+    position: absolute;
+    top: 0;
+    left: 35px;
+}
+
+/* ÅBNINGSTIDER */
+
+.aabningstider {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background: #eff2e7;
+    padding: 22px 35px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+
+.aabningstider h2 {
+    font-size: 25px;
+    margin: 0;
+    min-width: 175px;
+}
+
+.aabning-ikon {
+    background: #94b46d;
+    color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    flex-shrink: 0;
+}
+
+.aabning-liste {
+    border-left: 2px solid #7f9e68;
+    padding-left: 25px;
+    flex: 1;
+}
+
+.aabning-liste p {
+    font-size: 15px;
+    margin: 4px 0;
+}
+
+.sol-deko {
+    font-size: 55px;
+}
+
+/* INKLUDERET I PRISEN */
+
+.inkluderet {
+    background: #fffaf5;
+    padding: 30px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+}
+
+.inkluderet h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.sektion-intro {
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.inkluderet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.inkluderet-kort {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+}
+
+.inkluderet-kort img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+}
+
+.kort-indhold {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.kort-indhold h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.kort-indhold p {
+    font-size: 14px;
+    line-height: 1.4;
+    flex: 1;
+}
+
+.laes-mere {
+    display: inline-block;
+    background: #3d7545;
+    color: white;
+    text-decoration: none;
+    padding: 9px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+.laes-mere:hover {
+    background: #28562f;
+}
+
+/* PRIS OG FERIE */
+
+.praktisk-to-kolonner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.stor-info-kort {
+    border-radius: 22px;
+    overflow: hidden;
+    padding: 15px;
+}
+
+.pris-kort {
+    background: #eef2e5;
+}
+
+.ferie-kort {
+    background: #fce9e7;
+}
+
+.stor-info-kort img {
+    width: 100%;
+    height: 145px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.stor-kort-tekst {
+    padding: 18px;
+}
+
+.stor-kort-tekst h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.stor-kort-tekst p {
+    font-size: 15px;
+    line-height: 1.5;
+    max-width: 350px;
+}
+
+/* UDDYBENDE INFORMATION */
+
+.detaljer {
+    margin-bottom: 18px;
+}
+
+.detaljer details {
+    background: #f5f7ef;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    padding: 15px 20px;
+}
+
+.detaljer summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.detaljer p {
+    padding-top: 12px;
+    margin-bottom: 0;
+}
+
+/* SÆRLIGE HENSYN */
+
+.saerlige-hensyn {
+    background: #eff2e7;
+    border-radius: 22px;
+    padding: 25px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 18px;
+}
+
+.saerlige-hensyn h2 {
+    font-size: 26px;
+}
+
+.saerlige-hensyn p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.saerlige-hensyn img {
+    width: 280px;
+    height: 135px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* SYGDOM OG FRAVÆR */
+
+.sygdom {
+    background: #fffaf5;
+    border-radius: 22px;
+    padding: 30px 40px;
+    margin-bottom: 18px;
+}
+
+.sygdom h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.sygdom > p {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.faq {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq details {
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 13px 20px;
+}
+
+.faq summary {
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.faq details p {
+    padding-top: 12px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* KONTAKT */
+
+.praktisk-kontakt {
+    background: #fce9e7;
+    border-radius: 22px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.praktisk-kontakt img {
+    width: 260px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.kontakt-tekst {
+    flex: 1;
+}
+
+.kontakt-tekst h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.kontakt-tekst p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.kontakt-sol {
+    font-size: 60px;
+}
+
+/* MOBIL OG TABLET */
+
+@media (max-width: 900px) {
+    .inkluderet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .aabningstider {
+        flex-wrap: wrap;
+    }
+
+    .sol-deko {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .praktisk-side {
+        padding: 0 15px;
+    }
+
+    .praktisk-hero {
+        padding: 15px;
+        min-height: 250px;
+    }
+
+    .hero-tekst {
+        padding: 30px 20px;
+        border-radius: 35px;
+    }
+
+    .hero-tekst h1 {
+        font-size: 27px;
+    }
+
+    .inkluderet-grid,
+    .praktisk-to-kolonner {
+        grid-template-columns: 1fr;
+    }
+
+    .aabningstider {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .aabning-liste {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .saerlige-hensyn,
+    .praktisk-kontakt {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .saerlige-hensyn img,
+    .praktisk-kontakt img {
+        width: 100%;
+    }
+
+    .kontakt-sol {
+        display: none;
+    }
+}
+
+
+/* =====================================
+   EKSTRA INFORMATION - PRIS OG FERIE
+
+.udvidet-info {
+    background: #f4f6ee;
+    border-radius: 22px;
+    padding: 35px 45px;
+    margin-bottom: 18px;
+}
+
+.udvidet-info h2 {
+    font-size: 29px;
+    margin-bottom: 18px;
+}
+
+.udvidet-info h3 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.udvidet-info p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.ferie-detaljer {
+    background: #fff1ee;
+}
+
+/* TABELLER */
+
+.praktisk-tabel-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.praktisk-tabel {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.praktisk-tabel th {
+    background: #83a76c;
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+
+.praktisk-tabel td {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.praktisk-tabel tr:last-child td {
+    border-bottom: none;
+}
+
+/* VIGTIG INFORMATION */
+
+.info-bemaerkning {
+    background: #fff9df;
+    border-left: 4px solid #e7b74c;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+/* KLIKBARE SPØRGSMÅL */
+
+.udvidet-info details {
+    background: white;
+    border-radius: 12px;
+    margin-top: 12px;
+    padding: 18px 22px;
+}
+
+.udvidet-info summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.udvidet-info details p {
+    padding-top: 12px;
+    margin-bottom: 8px;
+}
+
+/* UDDYBENDE INFORMATION */
+
+.detaljer details p {
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.detaljer ul {
+    margin: 10px 0 15px;
+    padding-left: 25px;
+}
+
+.detaljer li {
+    margin-bottom: 6px;
+}
+
+/* MOBIL */
+
+@media (max-width: 600px) {
+    .udvidet-info {
+        padding: 25px 20px;
+    }
+
+    .udvidet-info h2 {
+        font-size: 25px;
+    }
+
+    .praktisk-tabel th,
+    .praktisk-tabel td {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+/* Sol ved åbningstider */
+.aabningstider .sol-deko {
+    width: 110px;
+    height: 110px;
+    max-width: 110px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.overskrift-hjerte {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+/* Hjerter ved overskrifter */
+.overskrift-hjerte {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+/* Sol ved kontaktsektionen */
+.praktisk-kontakt .kontakt-sol {
+    width: 110px;
+    height: 110px;
+    max-width: 110px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+.praktisk-kontakt .kontakt-tekst h2 .overskrift-hjerte {
+    width: 35px;
+    height: 35px;
+    max-width: 35px;
+    min-width: 35px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
 ============================================================ */
 
 /* Her indsættes styling til praktisk-information.html. */
