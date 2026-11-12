@@ -829,6 +829,280 @@ header{
 
 /* Her indsættes styling til om-mig.html, når siden implementeres. */
 
+/* OM MIG - SIDE */
+
+.om-side {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 24px 30px 60px;
+    font-family: 'Fredoka', sans-serif;
+    color: #292929;
+}
+
+.om-side * {
+    box-sizing: border-box;
+}
+
+.om-side h1,
+.om-side h2,
+.om-side h3 {
+    margin-top: 0;
+}
+
+.om-side p {
+    line-height: 1.65;
+}
+
+/* BANNER */
+
+
+
+.om-hero {
+    min-height: 310px;
+    border-radius: 28px;
+
+    background-image: url("images/om-mig-banner.png");
+    background-size: cover;
+    background-position: 25% center;
+    background-repeat: no-repeat;
+    background-color: #e8eddf;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    margin-bottom: 35px;
+}
+
+
+
+.om-hero-tekst {
+    position: relative;
+    max-width: 380px;
+    padding: 25px 30px;
+    border-radius: 45px;
+    background: rgba(255, 250, 244, 0.94);
+    text-align: center;
+}
+
+.om-hero h1 {
+    font-size: 44px;
+    margin-bottom: 8px;
+    color: #305b39;
+}
+
+.om-hero p {
+    font-size: 17px;
+    margin: 0;
+}
+
+.om-hjerte {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    color: #d76e62;
+    font-size: 32px;
+    transform: rotate(-15deg);
+}
+
+/* MØD TINA */
+
+.om-intro {
+    display: grid;
+    grid-template-columns: 30% 1fr 230px;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 35px;
+}
+
+.om-portraet {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.om-intro-tekst h2 {
+    font-size: 32px;
+}
+
+.om-intro-tekst p {
+    font-size: 16px;
+}
+
+.om-lille-hjerte {
+    color: #d76e62;
+    font-size: 34px;
+    vertical-align: middle;
+}
+
+.om-fakta {
+    background: #fff6ef;
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid #f3e6dc;
+}
+
+.om-fakta h3 {
+    color: #cb6d61;
+    font-size: 21px;
+}
+
+.om-fakta p {
+    font-size: 14px;
+    margin: 9px 0;
+}
+
+/* FÆLLES SEKTIONER */
+
+.om-sektion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 38px;
+    padding: 30px;
+    border-radius: 28px;
+    margin-bottom: 30px;
+}
+
+.om-sektion > img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.om-sektion-tekst h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.om-sektion-tekst p {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* KNAPPER */
+
+.om-knap {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #397548;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.om-knap:hover {
+    background: #285a35;
+}
+
+/* ET HJEM MED PLADS TIL LEG */
+
+.om-hjem {
+    background: #f4f8ed;
+}
+
+.om-hjem h2 {
+    color: #355d3e;
+}
+
+/* KREATIVITET */
+
+.om-kreativitet {
+    background: #fff9f2;
+}
+
+.om-kreativitet h2 {
+    color: #292929;
+}
+
+.om-billed-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.om-billed-grid img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.om-billed-grid img:first-child {
+    grid-column: span 2;
+    height: 195px;
+}
+
+/* MIN TILGANG */
+
+.om-tilgang {
+    background: #fff0ed;
+}
+
+.om-tilgang h2 {
+    color: #3d744d;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 1000px) {
+    .om-intro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .om-fakta {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 700px) {
+    .om-side {
+        padding: 15px;
+    }
+
+    .om-hero {
+        min-height: 260px;
+        padding: 20px;
+        justify-content: center;
+    }
+
+    .om-hero h1 {
+        font-size: 34px;
+    }
+
+    .om-hero-tekst {
+        padding: 25px;
+    }
+
+    .om-intro,
+    .om-sektion {
+        grid-template-columns: 1fr;
+    }
+
+    .om-sektion {
+        padding: 20px;
+    }
+
+    .om-portraet,
+    .om-sektion > img {
+        height: 250px;
+    }
+
+    .om-intro-tekst h2,
+    .om-sektion-tekst h2 {
+        font-size: 27px;
+    }
+
+    .om-fakta {
+        grid-column: auto;
+    }
+}
+
 /* ============================================================
    5. EN TYPISK DAG
 ============================================================ */
