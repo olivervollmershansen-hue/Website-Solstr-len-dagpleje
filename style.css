@@ -1251,6 +1251,10 @@ header{
    6. FORÆLDRE SIGER
 ============================================================ */
 
+/* Her indsættes styling til forældre-siger.html. */
+
+/* ============================================================
+   7. PRAKTISK INFORMATION
 /* HERO */
 
 .reviews-hero {
@@ -1603,7 +1607,6 @@ header {
 
 /* ============================================================
    7. PRAKTISK INFORMATION
-===================================== */
 
 .praktisk-side {
     max-width: 1250px;
@@ -2035,7 +2038,6 @@ header {
 
 /* =====================================
    EKSTRA INFORMATION - PRIS OG FERIE
-===================================== */
 
 .udvidet-info {
     background: #f4f6ee;
