@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration – Solstrålen Dagpleje</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f0;
+            color: #292c24;
+        }
+
+        header {
+            background: #343b2b;
+            color: white;
+            padding: 24px;
+        }
+
+        header h1 { margin: 0; font-size: 24px; }
+
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 3px 14px #0000000d;
+            margin-bottom: 24px;
+        }
+
+        label { display: block; margin: 16px 0 6px; }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 11px 16px;
+            border: 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            margin: 8px 8px 0 0;
+        }
+
+        .primary { background: #46523a; color: white; }
+        .approve { background: #dcebd7; color: #23421c; }
+        .reject { background: #f5dddd; color: #7d2222; }
+        .hidden { display: none; }
+
+        .review {
+            border: 1px solid #e0e0da;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        .review p { white-space: pre-wrap; overflow-wrap: anywhere; }
+        #message { margin-top: 16px; }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Solstrålen Dagpleje – Administration</h1>
+</header>
+
+<main>
+    <section id="loginPanel" class="panel">
+        <h2>Administratorlogin</h2>
+        <p>Log ind for at behandle anmeldelser.</p>
+
+        <form id="loginForm">
+            <label for="username">Brugernavn</label>
+            <input id="username" name="username" autocomplete="username"
+                   required>
+
+            <label for="password">Adgangskode</label>
+            <input id="password" name="password" type="password"
+                   autocomplete="current-password" required>
+
+            <button class="primary" type="submit">Log ind</button>
+        </form>
+        <p id="loginMessage" role="status"></p>
+    </section>
+
+    <section id="adminPanel" class="panel hidden">
+        <h2>Anmeldelser til godkendelse</h2>
+        <button id="refreshButton" class="primary">Opdater anmeldelser</button>
+        <button id="logoutButton">Log ud</button>
+        <div id="reviews"></div>
+        <p id="adminMessage" role="status"></p>
+    </section>
+</main>
+
+<script>
+    const loginPanel = document.getElementById('loginPanel');
+    const adminPanel = document.getElementById('adminPanel');
+
+    async function api(url, options = {}) {
+        const response = await fetch(url, {
+            credentials: 'same-origin',
+            ...options,
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            }
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Der opstod en fejl.');
+        }
+
+        return data;
+    }
+
+
+document.getElementById('loginForm').addEventListener('submit', async (event) => {
+        console.log('LOGIN-FORMULAREN VIRKER');
+        event.preventDefault();
+
+        const message = document.getElementById('loginMessage');
+        message.textContent = 'Logger ind...';
+
+        try {
+            await api('/api/admin/login', {
+                method: 'POST',
+                body: JSON.stringify({
+                    username: document.getElementById('username').value,
+                    password: document.getElementById('password').value
+                })
+            });
+
+            loginPanel.classList.add('hidden');
+            adminPanel.classList.remove('hidden');
+            document.getElementById('password').value = '';
+            await loadReviews();
+        } catch (error) {
+            message.textContent = error.message;
+        }
+    });
+
+    async function loadReviews() {
+        const container = document.getElementById('reviews');
+        const message = document.getElementById('adminMessage');
+
+        container.replaceChildren();
+        message.textContent = 'Henter anmeldelser...';
+
+        try {
+            const reviews = await api('/api/admin/reviews');
+            message.textContent = reviews.length
+                ? `${reviews.length} anmeldelse(r) afventer godkendelse.`
+                : 'Der er ingen anmeldelser, som afventer godkendelse.';
+
+            reviews.forEach(review => {
+                const card = document.createElement('article');
+                card.className = 'review';
+
+                const title = document.createElement('h3');
+                title.textContent = review.parent_name;
+
+                const rating = document.createElement('p');
+                rating.textContent = `Bedømmelse: ${review.rating}/5`;
+
+                const text = document.createElement('p');
+                text.textContent = review.review_text;
+
+                const approve = document.createElement('button');
+                approve.className = 'approve';
+                approve.textContent = 'Godkend';
+
+                const reject = document.createElement('button');
+                reject.className = 'reject';
+                reject.textContent = 'Afvis';
+
+                approve.addEventListener('click', () => updateReview(review.id, 'approved'));
+                reject.addEventListener('click', () => updateReview(review.id, 'rejected'));
+
+                card.append(title, rating, text, approve, reject);
+                container.appendChild(card);
+            });
+        } catch (error) {
+            if (error.message.includes('administrator')) {
+                adminPanel.classList.add('hidden');
+                loginPanel.classList.remove('hidden');
+                message.textContent = '';
+                document.getElementById('loginMessage').textContent =
+                    'Din session er udløbet. Log ind igen.';
+            } else {
+                message.textContent = error.message;
+            }
+        }
+    }
+
+    async function updateReview(id, status) {
+        const message = document.getElementById('adminMessage');
+
+        try {
+            const result = await api(`/api/admin/reviews/${id}`, {
+                method: 'PATCH',
+                body: JSON.stringify({ status })
+            });
+
+            message.textContent = result.message;
+            await loadReviews();
+        } catch (error) {
+            message.textContent = error.message;
+        }
+    }
+
+    document.getElementById('refreshButton').addEventListener('click', loadReviews);
+
+    document.getElementById('logoutButton').addEventListener('click', async () => {
+        try {
+            await api('/api/admin/logout', { method: 'POST' });
+            adminPanel.classList.add('hidden');
+            loginPanel.classList.remove('hidden');
+            document.getElementById('loginMessage').textContent = 'Du er logget ud.';
+            document.getElementById('reviews').replaceChildren();
+        } catch (error) {
+            document.getElementById('adminMessage').textContent = error.message;
+        }
+    });
+
+    // Kontroller, om der allerede er en aktiv administratorsession.
+    (async () => {
+        try {
+            await api('/api/admin/reviews');
+            loginPanel.classList.add('hidden');
+            adminPanel.classList.remove('hidden');
+            await loadReviews();
+        } catch (_) {
+            // Ikke logget ind: vis loginformularen.
+        }
+    })();
+</script>
+</body>
+</html>
