@@ -177,18 +177,20 @@ app.delete('/api/children/:id', async (req, res) => {
 });
 
 
-    res.json(result.rows);
 
-  } catch (error) {
-    console.error("Could not fetch children:", error);
-    res.status(500).json({
-      error: "Could not fetch children"
-    });
-  }
-});
+
+
 // Serve your existing HTML, CSS and images.
 app.use(express.static(__dirname));
 
-app.listen(PORT, () => {
-  console.log(`Website running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+
+  app.listen(PORT, () => {
+
+    console.log(`Website running at http://localhost:${PORT}`);
+
+  });
+
+}
+
+module.exports = app;
