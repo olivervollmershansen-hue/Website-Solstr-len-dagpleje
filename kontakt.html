@@ -33,6 +33,262 @@
 
     </header>
 
+    <main class="kontakt-side">
+
+        <!-- HERO-SEKTION -->
+        <section class="kontakt-hero">
+            <div class="kontakt-hero-tekst">
+                <h1>♡ Kontakt mig</h1>
+
+                <p>
+                    Har I spørgsmål, eller kunne I tænke jer at høre
+                    mere om Krudt, Kram og Krea?
+                    I er altid velkomne til at kontakte mig for en
+                    uforpligtende snak eller et besøg.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- INDHOLD -->
+        <div class="kontakt-grid">
+
+            <!-- VENSTRE SIDE -->
+            <div class="kontakt-venstre">
+
+                <!-- KONTAKTOPLYSNINGER -->
+                <section class="kontakt-oplysninger">
+
+                    <div class="kontakt-info-tekst">
+                        <h2>Mine kontaktoplysninger</h2>
+
+                        <div class="kontakt-info-linje">
+                            <span class="kontakt-ikon rosa">♙</span>
+                            <div>
+                                <strong>Tina Elmose</strong>
+                                <p>Privat dagplejer</p>
+                            </div>
+                        </div>
+
+                        <div class="kontakt-info-linje">
+                            <span class="kontakt-ikon grøn">📍</span>
+                            <div>
+                                <strong>Edelsmindevej 15</strong>
+                                <p>2700 Brønshøj</p>
+                            </div>
+                        </div>
+
+                        <div class="kontakt-info-linje">
+                            <span class="kontakt-ikon gul">☎</span>
+                            <a href="tel:51766662">51 76 66 62</a>
+                        </div>
+
+                        <div class="kontakt-info-linje">
+                            <span class="kontakt-ikon rosa">✉</span>
+                            <a href="mailto:krudt.kramogkrea@gmail.com">
+                                krudt.kramogkrea@gmail.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="kontakt-info-billede">
+                        <img src="images/kontakt-have.png" alt="Hyggelig terrasse i dagplejens have">
+                    </div>
+
+                </section>
+
+
+                <!-- KOM PÅ BESØG -->
+                <section class="kontakt-besøg">
+
+                    <h2>🌼 Kom på besøg</h2>
+
+                    <p>
+                        I er meget velkomne til at komme på besøg,
+                        så I kan opleve dagplejen og de trygge,
+                        hjemlige rammer. Her kan vi tage en snak
+                        om jeres ønsker og svare på alle jeres spørgsmål.
+                    </p>
+
+                    <div class="kontakt-knapper">
+
+                        <a href="tel:51766662" class="kontakt-knap">
+                            ☎ Ring til mig
+                            <span>51 76 66 62</span>
+                        </a>
+
+                        <a href="mailto:krudt.kramogkrea@gmail.com"
+                           class="kontakt-knap lys">
+                            ✉ Skriv en mail
+                            <span>krudt.kramogkrea@gmail.com</span>
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- DAGPLEJENS VÆRDIER -->
+                <section class="kontakt-værdier">
+
+                    <div>♡ <span>Tryghed</span></div>
+                    <div>🌿 <span>Natur</span></div>
+                    <div>🌈 <span>Kreativitet</span></div>
+                    <div>🌼 <span>Nærvær</span></div>
+
+                </section>
+
+            </div>
+
+
+            <!-- HØJRE SIDE -->
+            <div class="kontakt-højre">
+
+                <!-- LEDIGE PLADSER -->
+                <section class="kontakt-ledige">
+
+                    <h2>🌼 Hvornår kan dit barn starte?</h2>
+
+                    <p>
+                        Se, om der er en ledig plads på den dato, I ønsker.
+                        Hvis der er spørgsmål, er I altid velkomne til at ringe.
+                    </p>
+
+                    <form id="kontaktAvailabilityForm">
+
+                        <label for="kontaktStartDate">
+                            Ønsket startdato
+                        </label>
+
+                        <div class="kontakt-dato-form">
+
+                            <input
+                                    type="date"
+                                    id="kontaktStartDate"
+                                    required
+                            >
+
+                            <button type="submit">
+                                Tjek ledige pladser →
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <p id="kontaktAvailabilityResult" aria-live="polite"></p>
+
+                </section>
+
+
+                <!-- SPØRGSMÅL -->
+                <section class="kontakt-spørgsmål">
+
+                    <div class="kontakt-spørgsmål-ikon">☎</div>
+
+                    <div>
+                        <h2>Har du spørgsmål om plads?</h2>
+
+                        <p>
+                            Nogle gange kan der være et lille overlap,
+                            eller der kan være kort tid til en ledig plads.
+                            Ring endelig til mig, hvis du er i tvivl,
+                            eller har spørgsmål.
+                        </p>
+
+                        <a href="tel:51766662" class="kontakt-telefon-knap">
+                            ☎ 51 76 66 62
+                        </a>
+                    </div>
+
+                </section>
+
+
+                <!-- FIND VEJ -->
+                <section class="kontakt-find-vej">
+
+                    <div class="kontakt-find-tekst">
+
+                        <h2>📍 Find vej</h2>
+
+                        <p>
+                            Krudt, Kram og Krea ligger i et roligt område
+                            i Brønshøj, tæt på naturen og med en dejlig have.
+                        </p>
+
+                        <a
+                                href="https://www.google.com/maps/search/?api=1&query=Edelsmindevej+15+2700+Brønshøj"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="kontakt-kort-knap">
+                            Se rute på Google Maps →
+                        </a>
+                        <iframe
+                                class="kontakt-kort"
+                                src="https://www.google.com/maps?q=Edelsmindevej+15,+2700+Brønshøj&output=embed"
+                                width="100%"
+                                height="150"
+                                style="border:0;"
+                                loading="lazy"
+                                allowfullscreen
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+        const kontaktForm = document.getElementById("kontaktAvailabilityForm");
+        const kontaktDato = document.getElementById("kontaktStartDate");
+        const kontaktResultat = document.getElementById("kontaktAvailabilityResult");
+
+        kontaktForm.addEventListener("submit", async function(event) {
+            event.preventDefault();
+
+            const date = kontaktDato.value;
+
+            if (!date) {
+                kontaktResultat.textContent = "Vælg venligst en startdato.";
+                return;
+            }
+
+            kontaktResultat.textContent = "Undersøger ledige pladser...";
+
+            try {
+                const response = await fetch(
+                    "/api/availability?date=" + encodeURIComponent(date)
+                );
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(result.error || "Kunne ikke undersøge datoen.");
+                }
+
+                if (result.available) {
+                    kontaktResultat.textContent =
+                        "Der er mulighed for en ledig plads på den valgte dato. Kontakt mig gerne for nærmere information.";
+                } else {
+                    kontaktResultat.textContent =
+                        "Der er desværre ikke en ledig plads på den valgte dato. Ring gerne til mig.";
+                }
+
+            } catch (error) {
+                kontaktResultat.textContent =
+                    "Vi kunne ikke undersøge datoen lige nu. Prøv igen eller ring til mig.";
+
+                console.error(error);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
