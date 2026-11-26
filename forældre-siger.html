@@ -4,413 +4,490 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Læs anmeldelser og del jeres oplevelse hos Solstrålen Dagpleje.">
-    <title>Forældrene siger – Solstrålen Dagpleje</title>
+    <meta name="description" content="Læs familiernes oplevelser hos Krudt, Kram og Krea, og del jeres egen historie.">
+    <title>Forældre siger – Krudt, Kram og Krea</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
 
     <style>
-        :root {
-            --green: #46523a;
-            --green-dark: #343b2b;
-            --green-light: #edf0e8;
-            --cream: #f8f7f2;
-            --white: #ffffff;
-            --text: #292c24;
-            --muted: #73766d;
-            --border: #e4e4dc;
-            --gold: #d6a638;
+        .parent-stories {
+            --ps-green: #547a58;
+            --ps-deep: #23483d;
+            --ps-pink: #fae9e5;
+            --ps-sage: #eef2e8;
+            --ps-cream: #fffaf0;
+            --ps-gold: #e3ad43;
+            --ps-coral: #d9685d;
+            width: min(100% - 80px, 1390px);
+            margin: 24px auto 76px;
+            color: var(--ps-deep);
+            font-family: 'Fredoka', sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
+        .ps-hero {
+            position: relative;
+            isolation: isolate;
+            min-height: 540px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            border-radius: 30px;
+            background: #527448;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .ps-hero-photo {
+            position: absolute;
+            z-index: -2;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 48%;
         }
 
-        body {
-            margin: 0;
-            font-family:'Fredoka', sans-serif;
-            background: white;
-            color: var(--text);
-            line-height: 1.6;
+        .ps-hero::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0;
+            background: linear-gradient(90deg, rgb(19 42 29 / 16%), transparent 72%);
         }
 
-        a {
-            color: inherit;
+        .ps-hero-card {
+            position: relative;
+            width: min(58%, 690px);
+            margin: 54px 0 54px 4.2%;
+            padding: clamp(30px, 4vw, 52px);
+            border-radius: 24% 17% 21% 13% / 13% 17% 15% 18%;
+            background: #fffaf0;
+            box-shadow: 0 18px 55px rgb(28 49 31 / 13%);
         }
 
-        /* Navigation */
-
-/* Navigation - matcher resten af hjemmesiden */
-
-.navbar {
-    height: 70px;
-    min-height: 70px;
-    padding: 0 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 28px;
-    background: #faf9f5;
-    border-bottom: none;
-    box-sizing: border-box;
-}
-
-/* Logo */
-
-.logo img {
-    height: 60px;
-    width: auto;
-    margin-top: 6px;
-}
-
-/* Navigation links */
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 28px;
-}
-
-.nav-links a {
-    color: #333;
-    text-decoration: none;
-    font-size: 13px;
-    white-space: nowrap;
-    padding: 5px 0;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: #333;
-    text-decoration: underline;
-    text-underline-offset: 7px;
-}
-
-
-
-        /* Main content */
-        main {
-             width: 100%;
-             max-width: none;
-             margin: 0;
-             padding: 0 0 72px;
-             box-sizing: border-box;
+        .ps-heart {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--ps-coral);
+            font-size: 35px;
+            line-height: 1;
         }
 
-        .hero {
-            text-align: center;
-            max-width: 760px;
-            margin: 0 auto 44px;
-        }
-
-        .eyebrow {
-            color: var(--green);
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 2px;
+        .ps-kicker {
+            margin: 0 0 9px;
+            color: var(--ps-green);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1.8px;
             text-transform: uppercase;
         }
 
-        h1, h2, h3, p {
-            overflow-wrap: anywhere;
+        .ps-hero h1 {
+            margin: 0 0 18px;
+            color: var(--ps-deep);
+            font-size: clamp(38px, 4.6vw, 58px);
+            font-weight: 600;
+            line-height: 1.08;
         }
 
-        .hero h1 {
-            margin: 12px 0 16px;
-            color: var(--green-dark);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: clamp(32px, 5vw, 48px);
-            line-height: 1.15;
+        .ps-hero h1 span {
+            color: var(--ps-coral);
         }
 
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto;
-            color: #62655b;
-            font-size: 17px;
+        .ps-hero-copy {
+            margin: 0;
+            color: var(--ps-deep);
+            font-size: clamp(16px, 1.45vw, 19px);
+            line-height: 1.65;
         }
 
-        .intro-card {
-            display: flex;
-            justify-content: space-between;
+        .ps-button {
+            display: inline-flex;
             align-items: center;
-            gap: 24px;
-            margin-bottom: 48px;
-            padding: 26px 30px;
-            background: var(--green-light);
-            border-radius: 14px;
+            justify-content: center;
+            gap: 10px;
+            min-height: 52px;
+            margin-top: 25px;
+            padding: 0 27px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--ps-green);
+            color: white;
+            font: 600 16px 'Fredoka', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
         }
 
-        .intro-card h2 {
-            margin: 0 0 5px;
-            font-size: 19px;
-            color: var(--green-dark);
+        .ps-button:hover {
+            transform: translateY(-2px);
+            background: #3e6847;
+            box-shadow: 0 8px 18px rgb(44 83 53 / 18%);
         }
 
-        .intro-card p {
-            margin: 0;
-            color: #5d6255;
-            font-size: 14px;
-        }
-
-        .intro-icon {
-            flex-shrink: 0;
-            font-size: 38px;
-        }
-
-        .section-heading {
-            margin-bottom: 22px;
-        }
-
-        .section-heading h2 {
-            margin: 0 0 5px;
-            color: var(--green-dark);
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 29px;
-        }
-
-        .section-heading p {
-            margin: 0;
-            color: var(--muted);
-        }
-
-        /* Reviews */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .review-card {
-            padding: 25px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            box-shadow: 0 5px 18px #30382008;
-        }
-
-        .review-stars {
-            color: var(--gold);
-            font-size: 22px;
-            letter-spacing: 2px;
-        }
-
-        .review-card h3 {
-            margin: 12px 0 8px;
-            font-size: 17px;
-        }
-
-        .review-card .review-text {
-            margin: 0 0 16px;
-            color: #55584f;
-            white-space: pre-wrap;
-            overflow-wrap: anywhere;
-        }
-
-        .review-date {
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        .empty-state {
-            grid-column: 1 / -1;
-            padding: 35px 24px;
-            background: var(--white);
-            border: 1px dashed #d5d8cd;
-            border-radius: 13px;
+        .ps-intro {
+            max-width: 850px;
+            margin: 76px auto 34px;
             text-align: center;
         }
 
-        .empty-state .empty-icon {
-            font-size: 32px;
+        .ps-intro-kicker {
+            margin: 0 0 7px;
+            color: var(--ps-coral);
+            font-size: 16px;
+            font-weight: 600;
         }
 
-        .empty-state h3 {
-            margin: 8px 0;
-            color: var(--green-dark);
+        .ps-intro h2 {
+            margin: 0 0 12px;
+            color: var(--ps-deep);
+            font-size: clamp(30px, 3.7vw, 42px);
+            font-weight: 600;
         }
 
-        .empty-state p {
+        .ps-intro p:last-child {
             margin: 0;
-            color: var(--muted);
+            color: #3f5c50;
+            font-size: 17px;
+            line-height: 1.6;
         }
 
-        /* Review form */
-        .form-section {
-            margin-top: 64px;
-            padding: 34px;
-            background: var(--white);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            box-shadow: 0 5px 22px #30382008;
-        }
-
-        .form-section .section-heading {
-            margin-bottom: 24px;
-        }
-
-        .form-section form {
+        .ps-reviews-grid {
             display: grid;
-            gap: 18px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
-        .form-group {
+        .ps-review {
+            position: relative;
+            min-width: 0;
+            padding: 30px 32px 25px;
+            overflow: hidden;
+            border-radius: 27px;
+            background: var(--ps-pink);
+        }
+
+        .ps-review:nth-child(2n) {
+            background: var(--ps-sage);
+        }
+
+        .ps-review:nth-child(3n) {
+            background: #fff3d9;
+        }
+
+        .ps-review::after {
+            content: "“";
+            position: absolute;
+            top: -18px;
+            right: 20px;
+            color: rgb(35 72 61 / 9%);
+            font-size: 130px;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .ps-review-top {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .ps-stars {
+            color: var(--ps-gold);
+            font-size: 24px;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .ps-sample-tag {
+            padding: 5px 11px;
+            border-radius: 20px;
+            background: rgb(255 255 255 / 65%);
+            color: var(--ps-green);
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .ps-review h3 {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 10px;
+            color: var(--ps-deep);
+            font-size: 23px;
+            font-weight: 600;
+        }
+
+        .ps-review-text {
+            position: relative;
+            z-index: 1;
+            margin: 0 0 22px;
+            color: #294b40;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .ps-review-byline {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-top: 15px;
+            border-top: 1px solid rgb(35 72 61 / 14%);
+        }
+
+        .ps-avatar {
+            display: grid;
+            width: 43px;
+            height: 43px;
+            flex: 0 0 43px;
+            place-items: center;
+            border-radius: 50%;
+            background: #fffaf0;
+            color: var(--ps-coral);
+            font-size: 20px;
+        }
+
+        .ps-author {
+            margin: 0;
+            color: var(--ps-deep);
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .ps-date {
+            margin: 2px 0 0;
+            color: #687b70;
+            font-size: 12px;
+        }
+
+        .ps-demo-disclaimer {
+            margin: 17px 0 0;
+            color: #687b70;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .ps-share {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+            gap: 36px;
+            align-items: center;
+            margin-top: 82px;
+            padding: clamp(25px, 4vw, 52px);
+            border-radius: 31px;
+            background: var(--ps-pink);
+        }
+
+        .ps-share-copy {
+            padding: 5px 8px;
+        }
+
+        .ps-share-ornament {
+            display: block;
+            margin-bottom: 13px;
+            color: var(--ps-coral);
+            font-size: 39px;
+            line-height: 1;
+        }
+
+        .ps-share-copy h2 {
+            margin: 0 0 15px;
+            color: var(--ps-deep);
+            font-size: clamp(27px, 3vw, 36px);
+            font-weight: 600;
+            line-height: 1.15;
+        }
+
+        .ps-share-copy p {
+            margin: 0 0 13px;
+            color: #294b40;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .ps-share-copy .ps-thanks {
+            margin-top: 20px;
+            color: var(--ps-coral);
+            font-weight: 600;
+        }
+
+        .ps-form-card {
+            padding: clamp(22px, 3vw, 36px);
+            border-radius: 26px;
+            background: var(--ps-cream);
+            box-shadow: 0 12px 30px rgb(66 62 44 / 6%);
+        }
+
+        .ps-form-card h3 {
+            margin: 0 0 5px;
+            color: var(--ps-deep);
+            font-size: 27px;
+            font-weight: 600;
+        }
+
+        .ps-form-lead {
+            margin: 0 0 23px;
+            color: #607568;
+            font-size: 15px;
+        }
+
+        .ps-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .ps-field {
             display: grid;
             gap: 7px;
         }
 
-        label {
-            font-size: 14px;
-            font-weight: 700;
+        .ps-field label {
+            color: var(--ps-deep);
+            font-size: 15px;
+            font-weight: 600;
         }
 
-        input, textarea, select {
+        .ps-field input,
+        .ps-field select,
+        .ps-field textarea {
+            box-sizing: border-box;
             width: 100%;
-            padding: 13px 14px;
-            border: 1px solid #d5d6cf;
-            border-radius: 7px;
+            min-width: 0;
+            padding: 13px 15px;
+            border: 1px solid #e6ded2;
+            border-radius: 13px;
             background: #fff;
-            color: var(--text);
-            font: inherit;
+            color: var(--ps-deep);
+            font: 15px 'Fredoka', sans-serif;
         }
 
-        input:focus, textarea:focus, select:focus {
-            outline: 2px solid #8b987c;
-            outline-offset: 2px;
-            border-color: var(--green);
-        }
-
-        textarea {
-            min-height: 150px;
+        .ps-field textarea {
+            min-height: 140px;
             resize: vertical;
         }
 
-        .form-help {
-            margin: 0;
-            color: var(--muted);
-            font-size: 12px;
+        .ps-field input:focus,
+        .ps-field select:focus,
+        .ps-field textarea:focus {
+            outline: 2px solid #8eaa8b;
+            outline-offset: 2px;
         }
 
-        .primary-button {
+        .ps-help,
+        .ps-privacy {
+            margin: 0;
+            color: #748176;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .ps-submit {
             justify-self: start;
-            padding: 13px 22px;
-            border: 0;
-            border-radius: 7px;
-            background: var(--green);
-            color: white;
-            font: inherit;
-            font-weight: 700;
-            cursor: pointer;
-            transition: background 0.2s;
+            margin-top: 3px;
         }
 
-        .primary-button:hover {
-            background: var(--green-dark);
-        }
-
-        .primary-button:disabled {
-            cursor: wait;
-            opacity: 0.65;
-        }
-
-        .form-message {
+        .ps-form-message {
+            min-height: 18px;
             margin: 0;
-            padding: 12px 14px;
-            border-radius: 7px;
-            font-size: 14px;
+            color: var(--ps-green);
+            font-size: 13px;
         }
 
-        .form-message:empty {
-            display: none;
-        }
-
-        .form-message.success {
-            background: #edf5e9;
-            color: #2e5927;
-        }
-
-        .form-message.error {
-            background: #faeaea;
-            color: #8b2525;
-        }
-
-        .privacy-note {
-            margin: 0;
-            color: var(--muted);
-            font-size: 12px;
-        }
-
-        /* Footer */
-        .site-footer {
-            padding: 27px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            background: var(--green-dark);
-            color: #e6e8df;
-            font-size: 12px;
-        }
-
-        .admin-link {
-            color: #d0d4c8;
-            text-decoration: none;
-            opacity: 0.75;
-            transition: opacity 0.2s;
-        }
-
-        .admin-link:hover {
-            opacity: 1;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        @media (max-width: 760px) {
-            .navbar {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 14px;
+        @media (max-width: 900px) {
+            .parent-stories {
+                width: min(100% - 40px, 760px);
             }
 
-            .nav-links {
-                justify-content: flex-start;
-                gap: 10px 18px;
+            .ps-hero {
+                min-height: 470px;
             }
 
-            .nav-links a {
-                font-size: 13px;
+            .ps-hero-card {
+                width: min(70%, 600px);
             }
 
-            main {
-                padding-top: 38px;
-            }
-
-            .intro-card {
-                padding: 22px;
-            }
-
-            .reviews-grid {
+            .ps-share {
                 grid-template-columns: 1fr;
+                gap: 22px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .parent-stories {
+                width: calc(100% - 28px);
+                margin-top: 14px;
+                margin-bottom: 45px;
             }
 
-            .form-section {
-                padding: 23px 19px;
+            .ps-hero {
+                min-height: 570px;
+                align-items: flex-end;
+                border-radius: 23px;
             }
 
-            .site-footer {
-                align-items: flex-start;
-                flex-direction: column;
-                gap: 8px;
+            .ps-hero-photo {
+                object-position: 66% center;
+            }
+
+            .ps-hero::after {
+                background: linear-gradient(0deg, rgb(20 39 26 / 38%), transparent 78%);
+            }
+
+            .ps-hero-card {
+                width: auto;
+                margin: 0 13px 13px;
+                padding: 25px 23px;
+                border-radius: 26px;
+            }
+
+            .ps-hero h1 {
+                font-size: 37px;
+            }
+
+            .ps-hero-copy {
+                font-size: 15px;
+            }
+
+            .ps-intro {
+                margin: 52px auto 25px;
+            }
+
+            .ps-reviews-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .ps-review {
+                padding: 25px 22px;
+                border-radius: 23px;
+            }
+
+            .ps-share {
+                margin-top: 55px;
+                padding: 23px 15px;
+                border-radius: 24px;
+            }
+
+            .ps-form-card {
+                padding: 23px 17px;
+            }
+
+            .ps-submit {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .parent-stories * {
+                transition-duration: .01ms !important;
             }
         }
     </style>
@@ -419,84 +496,168 @@
 <body>
 <header>
     <a href="index.html" class="logo">
-        <img src="images/langlogo.png" alt="Solstrålen Dagpleje">
+        <img src="images/langlogo.png" alt="Krudt, Kram og Krea">
     </a>
 
     <nav class="menu" aria-label="Hovednavigation">
         <a href="index.html">Forside</a>
         <a href="om-mig.html">Om mig</a>
         <a href="typisk-dag.html">En typisk dag</a>
-        <a href="forældre-siger.html" class="active">Forældre siger</a>
+        <a href="forældre-siger.html" class="active" aria-current="page">Forældre siger</a>
         <a href="praktisk-information.html">Praktisk information</a>
         <a href="kontakt.html">Kontakt</a>
     </nav>
 </header>
 
+<main class="parent-stories">
+    <section class="ps-hero" aria-labelledby="psHeroTitle">
+        <img
+                class="ps-hero-photo"
+                src="images/Glad-barn.png"
+                alt="Et glad barn i haven"
+        >
 
-<main>
-    <section class="reviews-hero">
-        <div class="reviews-hero-content">
-            <div class="eyebrow">Ord fra familierne</div>
-            <h1>Forældrene siger</h1>
-            <p>
-                Det betyder meget at vide, at ens barn bliver mødt med
-                omsorg, nærvær og tryghed. Her kan du læse familiernes
-                oplevelser med Solstrålen Dagpleje.
+        <div class="ps-hero-card">
+            <span class="ps-heart" aria-hidden="true">♥</span>
+            <p class="ps-kicker">Ord fra familierne</p>
+
+            <h1 id="psHeroTitle">
+                Tryghed, nærvær<br>
+                og <span>små eventyr</span>
+            </h1>
+
+            <p class="ps-hero-copy">
+                Det betyder meget at vide, at ens barn bliver mødt med omsorg,
+                nærvær og tryghed. Her kan I læse familiers oplevelser med
+                hverdagen hos Krudt, Kram og Krea.
             </p>
-            <a href="#reviewsHeading" class="reviews-hero-button">
-                Læs forældrenes oplevelser
+
+            <a class="ps-button" href="#familiernes-oplevelser">
+                Læs forældrenes oplevelser <span aria-hidden="true">→</span>
             </a>
         </div>
     </section>
 
-
-    <section aria-labelledby="reviewsHeading">
-        <div class="section-heading">
-            <h2 id="reviewsHeading">Forældrenes oplevelser</h2>
-            <p id="reviewCount">Henter anmeldelser ...</p>
-        </div>
-
-        <div id="reviewsList" class="reviews-grid" aria-live="polite">
-            <div class="empty-state">
-                <p>Henter anmeldelser ...</p>
-            </div>
-        </div>
+    <section class="ps-intro" id="familiernes-oplevelser" aria-labelledby="psReviewsTitle">
+        <p class="ps-intro-kicker">♥ Tak fordi I deler</p>
+        <h2 id="psReviewsTitle">Familiernes oplevelser</h2>
+        <p>
+            Hver familie har sin egen historie. Her er et lille indblik
+            i den hverdag, vi skaber sammen.
+        </p>
     </section>
 
-    <section class="form-section" aria-labelledby="formHeading">
+    <!-- Midlertidige eksempeltekster – erstattes med godkendte anmeldelser, når backend kobles på. -->
+    <section class="ps-reviews-grid" aria-label="Eksempelanmeldelser">
+        <article class="ps-review">
+            <div class="ps-review-top">
+                <span class="ps-stars" aria-label="5 ud af 5 stjerner">★★★★★</span>
+                <span class="ps-sample-tag">Eksempeltekst</span>
+            </div>
+            <h3>En tryg hverdag</h3>
+            <p class="ps-review-text">
+                Vores barn glæder sig til at komme afsted om morgenen.
+                Det betyder meget for os at vide, at dagen bliver fyldt
+                med omsorg, leg og nærvær.
+            </p>
+            <div class="ps-review-byline">
+                <span class="ps-avatar" aria-hidden="true">♥</span>
+                <div>
+                    <p class="ps-author">En glad familie</p>
+                    <p class="ps-date">Midlertidig eksempeltekst</p>
+                </div>
+            </div>
+        </article>
 
-        <div class="form-intro">
-            <img
-                    src="images/barn_der_holder_blomst.png"
-                    alt="Barn med en blomst"
-                    class="form-illustration"
-            >
+        <article class="ps-review">
+            <div class="ps-review-top">
+                <span class="ps-stars" aria-label="5 ud af 5 stjerner">★★★★★</span>
+                <span class="ps-sample-tag">Eksempeltekst</span>
+            </div>
+            <h3>Plads til at være sig selv</h3>
+            <p class="ps-review-text">
+                Vi oplever en dejlig og rolig hverdag, hvor der er plads
+                til både små eventyr, kreativitet og masser af kram.
+            </p>
+            <div class="ps-review-byline">
+                <span class="ps-avatar" aria-hidden="true">♥</span>
+                <div>
+                    <p class="ps-author">En glad familie</p>
+                    <p class="ps-date">Midlertidig eksempeltekst</p>
+                </div>
+            </div>
+        </article>
 
-            <h2>Jeres ord betyder meget ❤️</h2>
+        <article class="ps-review">
+            <div class="ps-review-top">
+                <span class="ps-stars" aria-label="5 ud af 5 stjerner">★★★★★</span>
+                <span class="ps-sample-tag">Eksempeltekst</span>
+            </div>
+            <h3>Natur, leg og nærvær</h3>
+            <p class="ps-review-text">
+                Det er skønt, at børnene får lov til at udforske naturen,
+                lege sammen og udvikle sig i deres eget tempo.
+            </p>
+            <div class="ps-review-byline">
+                <span class="ps-avatar" aria-hidden="true">♥</span>
+                <div>
+                    <p class="ps-author">En glad familie</p>
+                    <p class="ps-date">Midlertidig eksempeltekst</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="ps-review">
+            <div class="ps-review-top">
+                <span class="ps-stars" aria-label="5 ud af 5 stjerner">★★★★★</span>
+                <span class="ps-sample-tag">Eksempeltekst</span>
+            </div>
+            <h3>Et hjem med varme</h3>
+            <p class="ps-review-text">
+                Den hjemlige atmosfære og den tætte kontakt giver os
+                ro i maven. Vi føler os altid velkomne.
+            </p>
+            <div class="ps-review-byline">
+                <span class="ps-avatar" aria-hidden="true">♥</span>
+                <div>
+                    <p class="ps-author">En glad familie</p>
+                    <p class="ps-date">Midlertidig eksempeltekst</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <p class="ps-demo-disclaimer">
+        Anmeldelserne ovenfor er midlertidige eksempeltekster –
+        ikke udtalelser fra faktiske forældre.
+    </p>
+
+    <section class="ps-share" aria-labelledby="psFormTitle">
+        <div class="ps-share-copy">
+            <span class="ps-share-ornament" aria-hidden="true">♥</span>
+            <h2>Jeres ord betyder meget</h2>
 
             <p>
-                Det betyder utrolig meget at høre, hvordan I og jeres
-                barn har oplevet tiden hos Solstrålen.
+                Det betyder utrolig meget at høre, hvordan I og jeres barn
+                har oplevet tiden hos Krudt, Kram og Krea.
             </p>
 
             <p>
-                Jeres anmeldelse kan også hjælpe andre familier
-                med at finde tryghed i valget af dagpleje.
+                Jeres anmeldelse kan også hjælpe andre familier med at finde
+                tryghed i valget af dagpleje.
             </p>
 
-            <p class="form-thanks">
+            <p class="ps-thanks">
                 Tak fordi I vil dele en lille del af jeres historie.
             </p>
         </div>
 
-        <div class="form-section-content">
-            <div class="section-heading">
-                <h2 id="formHeading">Del jeres oplevelse</h2>
-                <p>Vi glæder os til at høre fra jer!</p>
-            </div>
+        <div class="ps-form-card">
+            <h3 id="psFormTitle">Del jeres oplevelse</h3>
+            <p class="ps-form-lead">Vi glæder os til at høre fra jer!</p>
 
-            <form id="reviewForm">
-                <div class="form-group">
+            <form class="ps-form" id="reviewDemoForm">
+                <div class="ps-field">
                     <label for="parentName">Jeres navn</label>
                     <input
                             id="parentName"
@@ -509,7 +670,7 @@
                     >
                 </div>
 
-                <div class="form-group">
+                <div class="ps-field">
                     <label for="rating">Hvor mange stjerner vil I give?</label>
                     <select id="rating" name="rating" required>
                         <option value="">Vælg antal stjerner</option>
@@ -521,36 +682,48 @@
                     </select>
                 </div>
 
-                <div class="form-group">
+                <div class="ps-field">
                     <label for="reviewText">Fortæl om jeres oplevelse</label>
                     <textarea
                             id="reviewText"
                             name="review_text"
                             maxlength="5000"
-                            placeholder="Hvad har betydet mest for jer og jeres barn hos Solstrålen?"
+                            placeholder="Hvad har betydet mest for jer og jeres barn?"
                             required
                     ></textarea>
-                    <p class="form-help">Maks. 5.000 tegn.</p>
+                    <p class="ps-help">Maks. 5.000 tegn.</p>
                 </div>
 
-                <button id="submitButton" class="primary-button" type="submit">
+                <button class="ps-button ps-submit" type="submit">
                     Send jeres anmeldelse ❤️
                 </button>
 
-                <p id="formMessage" class="form-message"
-                   role="status" aria-live="polite"></p>
+                <p class="ps-form-message" id="formMessage" role="status" aria-live="polite"></p>
 
-                <p class="privacy-note">
-                    Jeres anmeldelse bliver først vist på hjemmesiden,
-                    når administratoren har godkendt den.
+                <p class="ps-privacy">
+                    Dette er indtil videre en visuel demo. Formularen sender
+                    eller gemmer ikke data endnu. Senere kobler vi den til
+                    anmeldelsessystemet og administratorgodkendelsen.
                 </p>
             </form>
         </div>
     </section>
-
 </main>
 
 <footer class="site-footer">
-    <span>© <span id="currentYear"></span> Solstrålen Dagpleje</span>
+    <span>© <span id="currentYear"></span> Krudt, Kram og Krea</span>
     <a href="/admin.html" class="admin-link">Administrator</a>
 </footer>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    document.getElementById('reviewDemoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        document.getElementById('formMessage').textContent =
+            'Tak for jeres interesse! Formularen bliver koblet til anmeldelsessystemet senere.';
+    });
+</script>
+</body>
+</html>
